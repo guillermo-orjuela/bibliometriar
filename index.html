@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Por: Guillermo Orjuela Ramirez." />
+
+
+<title>Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura.</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Inicio
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-book-open"></span>
+     
+    Contenido
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="busqueda_de_info.html">Busqueda de informacion</a>
+    </li>
+    <li>
+      <a href="descripcion.html">Descripcion UA</a>
+    </li>
+    <li>
+      <a href="estructuras.html">Visualizacion</a>
+    </li>
+    <li>
+      <a href="mineria.html">Mineria de texto</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="recursos.html">
+    <span class="fa fa-archive"></span>
+     
+    Recursos
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-user-circle"></span>
+     
+    Sobre mi
+  </a>
+</li>
+<li>
+  <a href="mailto:gorjuela@javerianacali.edu.co">
+    <span class="fa fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://scholar.google.com/citations?user=eK-vWdEAAAAJ&amp;hl=es">
+    <span class="fa fa-google"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura.</h1>
+<h4 class="author">Por: Guillermo Orjuela Ramirez.</h4>
+
+</div>
+
+
+<p>Esta página web compila la información básica del curso <strong>Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura.</strong> Su propósito es complementar la información conceptual de los contenidos presenciales. El <strong>objetivo principal</strong> del curso es <em>aplicar las herramientas bibliométricas a la producción científica para el mapeo de la ciencia y para la revisión de literatura</em>. El análisis de las bases de datos de documentos se hará usando el lenguaje de programación R y el software RStudio como herramientas para la manipulación y visualización de los datos.</p>
+<p>Todo el curso se desarrolla en R a través del contenido práctico de ejercicios, esto permite a los asistentes aprender sobre el uso de técnicas bibliométricas mientras se diseñan y aplican los códigos en R y fomenta la discusión de la interpretación de los resultados.</p>
+<p>El curso cubre los temas de preparación, búsqueda y obtención de información científica; selección de las bases de datos; y visualización e interpretación de los documentos. Estos temas se desarrollan en las cuatro partes del curso y buscan cumplir con los siguientes objetivos de aprendizaje.</p>
+<div id="objetivos" class="section level2">
+<h2>Objetivos</h2>
+<ul>
+<li>Definir y precisar expresiones de búsqueda.</li>
+<li>Procesar e interpretar bases en datos de la actividad científica a partir de técnicas bibliométricas.</li>
+<li>Visualizar la información bibliométrica y conocer sus beneficios y limitantes.</li>
+</ul>
+</div>
+<div id="motivación-r-para-el-mapeo-de-la-ciencia" class="section level2">
+<h2>Motivación: R para el mapeo de la ciencia</h2>
+<p>El número de publicaciones académicas se incrementa con el paso de los años. Así mismo, surgen nuevas revistas que abordan diversos temas de investigación. Por lo cual, el creciente ritmo de producción de conocimiento hace que estar al día con los hallazgos y evidencias sea una tarea que requiere cada vez más tiempo (Aria &amp; Cuccurullo, 2017). De allí que, la bibliometría, como una técnica para la medición de la actividad científica, resulta bastante útil para analizar grandes volúmenes de información.</p>
+<p>Para llevar a cabo un análisis bibliométrico, un investigador puede hacer uso de diversos software, sin embargo, para usarlos, el investigador debe familiarizarse con cada entorno, lo cual muchas veces es una barrera de entrada, ya que requiere tiempo y aprendizaje. Además, la mayoría de los software se especializan en análisis específicos, por lo que se requiere de varios de ellos para un resultado más completo.</p>
+<p>No obstante, en <a href="https://www.r-project.org/">R</a> se han desarrollado paquetes que proporcionan un análisis bibliométrico más completo y sus resultados permiten complementar la actividad investigativa, lo cual facilita su uso.</p>
+</div>
+<div id="audiencia" class="section level2">
+<h2>Audiencia</h2>
+<p>El curso de <strong>Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura.</strong> está dirigido tanto a quienes deseen aprender a visualizar e interpretar bases de datos de artículos científicos de manera ágil y dinámica, como a quienes necesiten complementar el proceso de revisión de literatura al aplicar herramientas bibliométricas como valor agregado a su actividad académica.</p>
+<p>Los contenidos de este curso no requieren en los asistentes un conocimiento especializado en R, ya que se comenzará con las ideas básicas del lenguaje de programación. Este curso está especialmente dirigido a personas con conocimiento básico en bases de datos científicas (Scopus o WoS).</p>
+</div>
+<div id="cotenido" class="section level2">
+<h2>Cotenido</h2>
+<p>El contenido sigue un flujo de trabajo el cual consiste en la búsqueda de información, el análisis descriptivo de las unidades de análisis, el análisis y visualización de los datos y la interpretación de los resultados (Zupic &amp; Čater, 2015).</p>
+<p><img src="wf_index.png" alt="wf1" title="wf1" width="640" height="225" /></p>
+<div id="parte-1-búsqueda-de-información" class="section level3">
+<h3>Parte 1: búsqueda de información</h3>
+<ul>
+<li>Bibliometría en la actividad científica.</li>
+<li>Definición del diseño de investigación.</li>
+<li>Bases de datos en ciencias sociales: ¿Cuál (o cuáles) debo usar?</li>
+<li>Diseño de la expresión de búsqueda.</li>
+<li>Obtención de la base de datos de documentos (artículos, libros).</li>
+<li>Selección de los documentos.</li>
+<li>Ejercicio: análisis bibliométrico.</li>
+</ul>
+</div>
+<div id="parte-2-descripción-de-las-unidades-de-análisis" class="section level3">
+<h3>Parte 2: Descripción de las unidades de análisis</h3>
+<ul>
+<li>Análisis descriptivo de la base de documentos.
+<ul>
+<li>Reconocimiento de la base de datos.</li>
+<li>Información agregada (revistas, autores, documentos).</li>
+<li>Producción científica anual.</li>
+</ul></li>
+<li>Métricas de revistas.
+<ul>
+<li>Relevancia (citaciones, ley de Bradford).</li>
+<li>Producción anual.</li>
+</ul></li>
+<li>Métricas de autores
+<ul>
+<li>Relevancia.</li>
+<li>Producción en el tiempo.</li>
+<li>Afiliaciones.</li>
+</ul></li>
+<li>Métricas de documentos.
+<ul>
+<li>GCS y LCS.</li>
+</ul></li>
+</ul>
+</div>
+<div id="parte-3-análisis-y-visualización-de-las-estructuras-intelectuales" class="section level3">
+<h3>Parte 3: análisis y visualización de las estructuras intelectuales</h3>
+<ul>
+<li>Estructura social.
+<ul>
+<li>Red de colaboración entre autores.</li>
+<li>Red de colaboración entre universidades.</li>
+</ul></li>
+<li>Estructura conceptual.
+<ul>
+<li>Red de co-ocurrencia de palabras clave.</li>
+<li>Red de co-ocurrencia en abstracts.</li>
+</ul></li>
+<li>Estructura intelectual.
+<ul>
+<li>Red de co-citación de autores.</li>
+<li>Red de co-citación de revistas.</li>
+<li>Mapa historiográfico.</li>
+</ul></li>
+</ul>
+</div>
+<div id="parte-4-análisis-de-texto" class="section level3">
+<h3>Parte 4: análisis de texto</h3>
+<ul>
+<li>Análisis de sentimientos.</li>
+<li>Minería de texto.</li>
+<li>Limpieza y edición de la base de datos.</li>
+</ul>
+</div>
+</div>
+<div id="metodología" class="section level2">
+<h2>Metodología</h2>
+<p>En las cuatro partes del curso se utilizan casos aplicados y durante la explicación del contenido se van aplicando los conceptos y técnicas bibliométricas. Además, si irá construyendo el código en R para explorar los resultados de las bases de datos.</p>
+</div>
+<div id="requisitos" class="section level2">
+<h2>Requisitos</h2>
+<p>Previo a iniciar cada parte del curso, los asistentes deben tener instalados R y RStudio, así como los paquetes De la pestaña de <strong>Recursos</strong>. * <a href="https://www.r-project.org/">R</a> V3.6.3 (2020-02-29). * <a href="https://rstudio.com/">RStudio</a>. * Paquetes instalados sección de Recursos.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
