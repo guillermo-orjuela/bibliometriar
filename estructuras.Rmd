@@ -1,0 +1,95 @@
+---
+title: "Redes de conocimiento"
+output: 
+  html_document:
+    theme: flatly
+    toc: TRUE
+    toc_float: TRUE
+site: distill::distill_website
+---
+
+```{r, echo=T, warning=F, message=F, eval=T, results='hide'}
+library(bibliometrix)
+library(dplyr)
+library(ggplot2)
+library(kableExtra)
+# Definir el directorio de trabajo
+setwd("C:/Users/User/Google Drive/Web_pages/example_ecoinnov_290620")
+# Base de datos
+df <- convert2df("ecoinnov_290620.bib", dbsource="scopus", format="bibtex")
+```
+
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometria_r_rev-lit/wf_estructuras.png" alt="wf1" title="wf1" width="640" height="225" />
+
+## Estructura intelectual
+La estructura intelectual se refiere a la manera en que están relacionados los documentos que representan la base de conocimiento de un área de investigación. Se compone de las publicaciones fundamentales para llevar a cabo la investigación actual. La estructura intelectual puede subdividirse en estructura social, conceptual y el conocimiento intelectual. A su vez, cada tipo de estructura utiliza diferentes técnicas bibliométricas para representar su estructura. Estas técnicas emplean diferentes unidades de observación dentro de los documentos.
+
+## 1. Estructura social
+La estructura social mide la colaboración entre diferentes actores. Los principales son autores y universidades. La colaboración entre autores refleja la co-autoría de documentos, mientras que la colaboración entre universidades representa la conexión de varias universidades participando en un mismo documento.
+
+### 1.1. Red de colaboración entre autores
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=8}
+ac <- biblioNetwork(df, analysis = "collaboration", network = "authors", sep = ";")
+ac1 <- networkPlot(ac, n = 50, Title = "Red de colaboración entre autores", type = "auto", labelsize = 1)
+```
+
+```{r, echo=F, warning=F, message=F, eval=F}
+ac2 <- networkStat(ac, stat = "network", type = "degree")
+```
+
+### 1.2. Red de colaboración entre universidades
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=10}
+uc <- biblioNetwork(df, analysis = "collaboration", network = "universities", sep = ";")
+uc1 <- networkPlot(uc, n = 50, Title = "Red de colaboración entre universidades", type = "auto", labelsize = 1)
+```
+
+## 2. Estructura conceptual
+La estructura conceptual representa la conexión entre palabras que aparecen en el mismo documento. Esta conexión puede ser las palbras clave, los abstracts o los títulos.
+
+### 2.1. Red de palabras clave
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=10}
+ck <- biblioNetwork(df, analysis = "co-occurrences", network = "keywords", sep = ";")
+ck1 <- networkPlot(ck, n = 50, Title = "Red de co-ocurrencia entre autores", type = "auto", labelsize = 1)
+```
+
+### 2.2. Red de palabras de abstracts
+
+```{r, echo=T, warning=F, message=F, eval=T, results='hide'}
+df <- termExtraction(df, Field = "AB", stemming = T, language = "english", keep.terms=NULL, verbose=T)
+```
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=10}
+cs <- biblioNetwork(df, analysis = "co-occurrences", network = "abstracts", sep = ";", shortlabel = T)
+cs1 <- networkPlot(cs, n = 50, Title = "Red de co-ocurrencia entre revistas", labelsize = 1)
+```
+
+## 3. Estructura intelectual
+La estructura intelectual refleja la medida de influencia de las unidades de análisis. En la medida que haya más citaciones representa más influencia de la unidad de análisis. Las principales mediciones de la estructura intelectual son la co-citación de autores, revistas y referencias.
+
+### 3.1. Co-citación de autores
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=10}
+coa <- biblioNetwork(df, analysis = "co-citation", network = "references", sep = ";")
+coa1 <- networkPlot(coa, n = 50, Title = "Red de co-citación entre referencias", labelsize = 1)
+```
+
+### 3.2. Co-citación de revistas
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=10}
+df <- metaTagExtraction(df, Field="CR_SO")
+cos <- biblioNetwork(df, analysis = "co-citation", network = "sources", sep = ";")
+cos1 <- networkPlot(cos, n = 20, Title = "Red de co-citación entre revistas", labelsize = 1)
+```
+
+### 3.3. Mapa historiográfico
+
+```{r, echo=T, warning=F, message=F, eval=T, results='hide'}
+h <- histNetwork(df, min.citations = 10, sep = ";", network = T, verbose = T)
+```
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=13, fig.height=8}
+histPlot(h, n = 30, size = 5, labelsize = 7, verbose = T)
+```

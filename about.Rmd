@@ -1,0 +1,13 @@
+---
+title: "Sobre mi."
+output:
+  html_document:
+    theme: flatly
+    toc: TRUE
+    toc_float: TRUE
+site: distill::distill_website
+---
+
+Mi nombre es Guillermo Orjuela Ramirez, soy economista, M.Sc. en Desarrollo Rural y M.Sc. en Ciencias Económicas. Cuento con 6 años de experiencia como profesor universitario en diferentes universidades, así como experiencia trabajando en el sector público. Actualmente soy estudiante de tercer año en el doctorado en ciencias económicas de la Pontificia Universidad Javeriana-Cali. Mis intereses en investigación son la eco-innovación y la economía ambiental. 
+
+Esta página y el curso que desarrollé nació por otro de mis intereses, que es la aplicación de técnicas bibliométricas para la medición de la actividad científica y su visualización en [R](https://www.r-project.org/). Responde a mi propia necesidad de comprender y aplicar correctamente las técnicas de bibliometría, así como su adecuada interpretación.
