@@ -1,5 +1,6 @@
 name: "bibliometria_r_rev-lit"
 title: "Bibliometria en R"
+google_analytics: "239362750"
 output_dir: "_site"
 navbar:
   left:

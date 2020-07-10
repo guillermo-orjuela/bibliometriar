@@ -1,5 +1,5 @@
 ---
-title: "Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura."
+title: "Bibliometría en R para el mapeo de la ciencia y la revisión de literatura."
 author: "Por: Guillermo Orjuela Ramirez."
 output:
   html_document:
@@ -9,7 +9,7 @@ output:
 site: distill::distill_website
 ---
 
-Esta página web compila la información básica del curso **Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura.** Su propósito es complementar la información conceptual de los contenidos presenciales. El **objetivo principal** del curso es *aplicar las herramientas bibliométricas a la producción científica para el mapeo de la ciencia y para la revisión de literatura*. El análisis de las bases de datos de documentos se hará usando el lenguaje de programación R y el software RStudio como herramientas para la manipulación y visualización de los datos.
+Esta página web compila la información básica del curso **Bibliometría en R para el mapeo de la ciencia y la revisión de literatura.** Con esta página se pretende complementar la información conceptual de los contenidos presenciales. El **objetivo principal** del curso es *aplicar las herramientas bibliométricas a la producción científica para el mapeo de la ciencia y para la revisión de literatura*. El análisis de las bases de datos de documentos se hará usando el lenguaje de programación R y el software RStudio como herramientas para la manipulación y visualización de los datos.
 
 Todo el curso se desarrolla en R a través del contenido práctico de ejercicios, esto permite a los asistentes aprender sobre el uso de técnicas bibliométricas mientras se diseñan y aplican los códigos en R y fomenta la discusión de la interpretación de los resultados.
 

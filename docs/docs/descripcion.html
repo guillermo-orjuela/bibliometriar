@@ -1,0 +1,9685 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Descripción de las unidades de análisis</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Inicio
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-book-open"></span>
+     
+    Contenido
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="busqueda_de_info.html">Busqueda de informacion</a>
+    </li>
+    <li>
+      <a href="descripcion.html">Descripcion UA</a>
+    </li>
+    <li>
+      <a href="estructuras.html">Visualizacion</a>
+    </li>
+    <li>
+      <a href="mineria.html">Mineria de texto</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="recursos.html">
+    <span class="fa fa-archive"></span>
+     
+    Recursos
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-user-circle"></span>
+     
+    Sobre mi
+  </a>
+</li>
+<li>
+  <a href="mailto:gorjuela@javerianacali.edu.co">
+    <span class="fa fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://scholar.google.com/citations?user=eK-vWdEAAAAJ&amp;hl=es">
+    <span class="fa fa-google"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Descripción de las unidades de análisis</h1>
+
+</div>
+
+
+<p><img src="wf_descripcion.png" alt="wf1" title="wf1" width="640" height="225" /></p>
+<div id="unidades-de-análisis" class="section level2">
+<h2>Unidades de análisis</h2>
+<p>Las unidades de análisis representan el conjunto de elementos de donde se extrae la información y los cuales podemos utilizar para aplicar las técnicas bibliométricas. Las principales unidades de análisis son los documentos, autores, revistas, instituciones. Dentro de un documento, las unidades de análisis pueden ser el título, el resumen, las palabras clave y el texto. Seguidamente se aplicará el análisis descriptivo a las principales unidades de análisis.</p>
+</div>
+<div id="d1" class="section level2">
+<h2>1. Cargue de paquetes y de la base de datos.</h2>
+<p>Los siguientes paquetes se usarán para trabajar con la base de datos para el análisis bibliométrico. En la parte de <strong>Recursos</strong> se indica cómo se pueden instalar. A partir de aquí se deben cargar en la consola de R para su uso.</p>
+<pre class="r"><code>library(bibliometrix)
+library(dplyr)
+library(ggplot2)
+library(kableExtra)</code></pre>
+<p>Para cargar la base de datos se comienza por usar la función <em>setwd</em> que permite definir la carpeta donde se encuentre la base de datos y donde guardaremos los resultados del análisis. Luego, la función <em>convert2df</em> permite transformar el archivo a formato bibliometrix</p>
+<pre class="r"><code># Definir el directorio de trabajo
+setwd(&quot;C:/Users/User/Google Drive/Web_pages/example_ecoinnov_290620&quot;)
+
+# Base de datos
+df &lt;- convert2df(&quot;ecoinnov_290620.bib&quot;, dbsource=&quot;scopus&quot;, format=&quot;bibtex&quot;)</code></pre>
+</div>
+<div id="d2" class="section level2">
+<h2>2. Análisis descriptivo agregado.</h2>
+<div id="dimensión-y-nombre-de-las-variables" class="section level3">
+<h3>2.1. Dimensión y nombre de las variables</h3>
+<p>Cuando se trabaja con una base de datos, lo primero que se debe hacer es conocer su dimensión y las variables de la base. La dimensión corresponde a la cantidad de artículos (filas u observaciones) y variables (columnas) de la base de datos de los documentos. La base de datos contiene 1.640 artículos y 31 variables.</p>
+<p>Las variables son nombradas según la codificación de <em>Scopus</em> o <em>Web of Knowledge</em></p>
+<pre class="r"><code># Dimensiones de la base de datos
+dim(df)</code></pre>
+<pre><code>## [1] 1640   31</code></pre>
+<pre class="r"><code># Nombre de las variables
+names(df)</code></pre>
+<pre><code>##  [1] &quot;AU&quot;         &quot;DE&quot;         &quot;ID&quot;         &quot;C1&quot;         &quot;CR&quot;        
+##  [6] &quot;JI&quot;         &quot;AB&quot;         &quot;AR&quot;         &quot;coden&quot;      &quot;RP&quot;        
+## [11] &quot;DT&quot;         &quot;DI&quot;         &quot;BN&quot;         &quot;SN&quot;         &quot;SO&quot;        
+## [16] &quot;LA&quot;         &quot;TC&quot;         &quot;PN&quot;         &quot;page_count&quot; &quot;PP&quot;        
+## [21] &quot;PU&quot;         &quot;DB&quot;         &quot;TI&quot;         &quot;url&quot;        &quot;VL&quot;        
+## [26] &quot;PY&quot;         &quot;AU_UN&quot;      &quot;AU1_UN&quot;     &quot;AU_UN_NR&quot;   &quot;SR_FULL&quot;   
+## [31] &quot;SR&quot;</code></pre>
+</div>
+<div id="descripción-agregada-de-la-base-de-datos" class="section level3">
+<h3>2.2. Descripción agregada de la base de datos</h3>
+<p>Luego se obtiene la información descriptiva agregada de la base de datos. Para ello se aplica la función <em>biblioAnalysis</em> a la base <em>df</em>. Se recomienda verificar si la información está separada por coma (<em>,</em>) o por punto y coma (<em>;</em>). Esta función da un objeto de clase <em>bibliometrix</em>.</p>
+<pre class="r"><code>da &lt;- biblioAnalysis(df, sep = &quot;;&quot;)</code></pre>
+<p>El objeto <em>da</em> tiene información general como: número de artículos, número de autores y su producción, artículos más citados, las organizaciones y países de afiliación de los autores al momento de publicar el artículo, el total de citas por año, el número de artículos publicados por revista.</p>
+<p>Para obtener un resumen de la base de datos se aplica la función <em>summary</em></p>
+<pre class="r"><code>s &lt;- summary(da, pause = F)</code></pre>
+<pre class="r"><code>s1 &lt;- as.data.frame(s$MainInformationDF)</code></pre>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Results
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+MAIN INFORMATION ABOUT DATA
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Timespan
+</td>
+<td style="text-align:left;">
+1990:2020
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sources (Journals, Books, etc)
+</td>
+<td style="text-align:left;">
+416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Documents
+</td>
+<td style="text-align:left;">
+1640
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Average years from publication
+</td>
+<td style="text-align:left;">
+5.06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Average citations per documents
+</td>
+<td style="text-align:left;">
+30.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Average citations per year per doc
+</td>
+<td style="text-align:left;">
+4.31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+References
+</td>
+<td style="text-align:left;">
+88315
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DOCUMENT TYPES
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+article
+</td>
+<td style="text-align:left;">
+1640
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DOCUMENT CONTENTS
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Keywords Plus (ID)
+</td>
+<td style="text-align:left;">
+3874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Author’s Keywords (DE)
+</td>
+<td style="text-align:left;">
+4050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AUTHORS
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Authors
+</td>
+<td style="text-align:left;">
+3413
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Author Appearances
+</td>
+<td style="text-align:left;">
+4455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Authors of single-authored documents
+</td>
+<td style="text-align:left;">
+267
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Authors of multi-authored documents
+</td>
+<td style="text-align:left;">
+3146
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AUTHORS COLLABORATION
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Single-authored documents
+</td>
+<td style="text-align:left;">
+307
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Documents per Author
+</td>
+<td style="text-align:left;">
+0.481
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Authors per Document
+</td>
+<td style="text-align:left;">
+2.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Co-Authors per Documents
+</td>
+<td style="text-align:left;">
+2.72
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Collaboration Index
+</td>
+<td style="text-align:left;">
+2.36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="producción-científica-anual" class="section level3">
+<h3>2.3. Producción científica anual</h3>
+<pre class="r"><code>acp &lt;- as.data.frame(s$AnnualProduction)
+colnames(acp)[1] &lt;- &quot;year&quot;
+ggplot(acp, aes(year,  Articles, group=1)) + geom_point(stat=&#39;summary&#39;, fun=sum) + stat_summary(fun=sum, geom=&quot;line&quot;)</code></pre>
+<p><img src="descripcion_files/figure-html/unnamed-chunk-8-1.png" width="960" /></p>
+</div>
+</div>
+<div id="d3" class="section level2">
+<h2>3. Análisis de revistas</h2>
+<div id="revistas-más-relevantes" class="section level3">
+<h3>3.1. Revistas más relevantes</h3>
+<p>La relevancia corresponde a la cantidad de citaciones que posee la unidad de análisis. Así, la citación es una medida de influencia, por lo que un artículo, autor o revista es relevante en un área de conocimiento si es altamente citado. Lo anterior se basa en el supuesto que los autores citan los documentos que consideran importantes.</p>
+<pre class="r"><code>rs &lt;- as.data.frame(s$MostRelSources)
+rs %&gt;% kable() %&gt;% kable_styling(bootstrap_options=&quot;striped&quot;, full_width=F, position=&quot;left&quot;)</code></pre>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Sources
+</th>
+<th style="text-align:left;">
+Articles
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF CLEANER PRODUCTION
+</td>
+<td style="text-align:left;">
+350
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS STRATEGY AND THE ENVIRONMENT
+</td>
+<td style="text-align:left;">
+118
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE
+</td>
+<td style="text-align:left;">
+56
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECOLOGICAL ECONOMICS
+</td>
+<td style="text-align:left;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CORPORATE SOCIAL RESPONSIBILITY AND ENVIRONMENTAL MANAGEMENT
+</td>
+<td style="text-align:left;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESEARCH POLICY
+</td>
+<td style="text-align:left;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INNOVATION AND SUSTAINABLE DEVELOPMENT
+</td>
+<td style="text-align:left;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGY ANALYSIS AND STRATEGIC MANAGEMENT
+</td>
+<td style="text-align:left;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS ETHICS
+</td>
+<td style="text-align:left;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRY AND INNOVATION
+</td>
+<td style="text-align:left;">
+19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ley-de-bradford" class="section level3">
+<h3>3.2. Ley de Bradford</h3>
+<pre class="r"><code>bl &lt;- bradford(df)
+blt &lt;- bl$table
+blt &lt;- blt %&gt;% mutate(pfreq = prop.table(Freq)) %&gt;% mutate(cum_freq = cumsum(pfreq))
+blt &lt;- blt %&gt;% select(SO, Rank, Freq, Zone, pfreq, cum_freq)
+blt %&gt;% kable() %&gt;% kable_styling(bootstrap_options=&quot;striped&quot;, full_width=F, position=&quot;left&quot;) %&gt;%   scroll_box(width = &quot;100%&quot;, height = &quot;200px&quot;)</code></pre>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+SO
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Rank
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Freq
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Zone
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+pfreq
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+cum_freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF CLEANER PRODUCTION
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+350
+</td>
+<td style="text-align:left;">
+Zone 1
+</td>
+<td style="text-align:right;">
+0.2135448
+</td>
+<td style="text-align:right;">
+0.2135448
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS STRATEGY AND THE ENVIRONMENT
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:left;">
+Zone 1
+</td>
+<td style="text-align:right;">
+0.0719951
+</td>
+<td style="text-align:right;">
+0.2855400
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:left;">
+Zone 1
+</td>
+<td style="text-align:right;">
+0.0341672
+</td>
+<td style="text-align:right;">
+0.3197071
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECOLOGICAL ECONOMICS
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:left;">
+Zone 1
+</td>
+<td style="text-align:right;">
+0.0268456
+</td>
+<td style="text-align:right;">
+0.3465528
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CORPORATE SOCIAL RESPONSIBILITY AND ENVIRONMENTAL MANAGEMENT
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0231849
+</td>
+<td style="text-align:right;">
+0.3697376
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESEARCH POLICY
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0219646
+</td>
+<td style="text-align:right;">
+0.3917023
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INNOVATION AND SUSTAINABLE DEVELOPMENT
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0195241
+</td>
+<td style="text-align:right;">
+0.4112264
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGY ANALYSIS AND STRATEGIC MANAGEMENT
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0140329
+</td>
+<td style="text-align:right;">
+0.4252593
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS ETHICS
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0122026
+</td>
+<td style="text-align:right;">
+0.4374619
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRY AND INNOVATION
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0115924
+</td>
+<td style="text-align:right;">
+0.4490543
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EUROPEAN JOURNAL OF INNOVATION MANAGEMENT
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0091519
+</td>
+<td style="text-align:right;">
+0.4582062
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF TECHNOLOGY MANAGEMENT AND INNOVATION
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0073215
+</td>
+<td style="text-align:right;">
+0.4655278
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+QUALITY - ACCESS TO SUCCESS
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0073215
+</td>
+<td style="text-align:right;">
+0.4728493
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESOURCES, CONSERVATION AND RECYCLING
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0073215
+</td>
+<td style="text-align:right;">
+0.4801708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENVIRONMENTAL AND RESOURCE ECONOMICS
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0067114
+</td>
+<td style="text-align:right;">
+0.4868822
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INNOVATION: MANAGEMENT, POLICY AND PRACTICE
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0067114
+</td>
+<td style="text-align:right;">
+0.4935937
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOVATION
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0067114
+</td>
+<td style="text-align:right;">
+0.5003051
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ENVIRONMENTAL ECONOMICS AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0061013
+</td>
+<td style="text-align:right;">
+0.5064063
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORGANIZATION AND ENVIRONMENT
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0061013
+</td>
+<td style="text-align:right;">
+0.5125076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENVIRONMENTAL ECONOMICS AND POLICY STUDIES
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0054912
+</td>
+<td style="text-align:right;">
+0.5179988
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENERGY ECONOMICS AND POLICY
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0054912
+</td>
+<td style="text-align:right;">
+0.5234899
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF PRODUCTION ECONOMICS
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0054912
+</td>
+<td style="text-align:right;">
+0.5289811
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF EVOLUTIONARY ECONOMICS
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0054912
+</td>
+<td style="text-align:right;">
+0.5344722
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENERGY ECONOMICS
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0048810
+</td>
+<td style="text-align:right;">
+0.5393533
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF BUSINESS INNOVATION AND RESEARCH
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0048810
+</td>
+<td style="text-align:right;">
+0.5442343
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INNOVATION MANAGEMENT
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0048810
+</td>
+<td style="text-align:right;">
+0.5491153
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF SUPPLY CHAIN MANAGEMENT
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0048810
+</td>
+<td style="text-align:right;">
+0.5539963
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS RESEARCH
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0048810
+</td>
+<td style="text-align:right;">
+0.5588774
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SMALL BUSINESS ECONOMICS
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0048810
+</td>
+<td style="text-align:right;">
+0.5637584
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BRITISH FOOD JOURNAL
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0042709
+</td>
+<td style="text-align:right;">
+0.5680293
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INNOVATION
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0042709
+</td>
+<td style="text-align:right;">
+0.5723002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF OPERATIONS AND PRODUCTION MANAGEMENT
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0042709
+</td>
+<td style="text-align:right;">
+0.5765711
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SUSTAINABLE TOURISM
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0042709
+</td>
+<td style="text-align:right;">
+0.5808420
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CORPORATE GOVERNANCE (BINGLEY)
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0036608
+</td>
+<td style="text-align:right;">
+0.5845027
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FUTURES
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0036608
+</td>
+<td style="text-align:right;">
+0.5881635
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0036608
+</td>
+<td style="text-align:right;">
+0.5918243
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGY, POLICY AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0036608
+</td>
+<td style="text-align:right;">
+0.5954851
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT RESEARCH REVIEW
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0036608
+</td>
+<td style="text-align:right;">
+0.5991458
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESOURCE AND ENERGY ECONOMICS
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0036608
+</td>
+<td style="text-align:right;">
+0.6028066
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACTUAL PROBLEMS OF ECONOMICS
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6058572
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASIAN SOCIAL SCIENCE
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6089079
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CITIES
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6119585
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMICS OF INNOVATION AND NEW TECHNOLOGY
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6150092
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL ECONOMICS AND ECONOMIC POLICY
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6180598
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTREPRENEURSHIP AND INNOVATION
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6211104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF HOSPITALITY MANAGEMENT
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6241611
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF RECENT TECHNOLOGY AND ENGINEERING
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6272117
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGY MANAGEMENT
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6302624
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ENVIRONMENTAL MANAGEMENT AND TOURISM
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6333130
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF KNOWLEDGE MANAGEMENT
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6363636
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MANUFACTURING TECHNOLOGY MANAGEMENT
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6394143
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL ON CHAIN AND NETWORK SCIENCE
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6424649
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT DECISION
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6455156
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROGRESS IN INDUSTRIAL ECOLOGY
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6485662
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R AND D MANAGEMENT
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6516168
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGICAL AND ECONOMIC DEVELOPMENT OF ECONOMY
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0030506
+</td>
+<td style="text-align:right;">
+0.6546675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+APPLIED ECONOMICS
+</td>
+<td style="text-align:right;">
+57
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6571080
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS AND SOCIETY
+</td>
+<td style="text-align:right;">
+58
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6595485
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CORPORATE ENVIRONMENTAL STRATEGY
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6619890
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IEEE ENGINEERING MANAGEMENT REVIEW
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6644295
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6668700
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRIAL MANAGEMENT AND DATA SYSTEMS
+</td>
+<td style="text-align:right;">
+62
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6693106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL BUSINESS MANAGEMENT
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 2
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6717511
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF APPLIED BUSINESS AND ECONOMIC RESEARCH
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6741916
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF CONSUMER STUDIES
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6766321
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INNOVATION SCIENCE
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6790726
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ENGINEERING AND TECHNOLOGY MANAGEMENT - JET-M
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6815131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INNOVATION AND KNOWLEDGE
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6839536
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF PRODUCT INNOVATION MANAGEMENT
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6863941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF THE KNOWLEDGE ECONOMY
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6888347
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESEARCH JOURNAL OF TEXTILE AND APPAREL
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6912752
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESEARCH TECHNOLOGY MANAGEMENT
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6937157
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SUSTAINABILITY ACCOUNTING, MANAGEMENT AND POLICY JOURNAL
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6961562
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TQM JOURNAL
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0024405
+</td>
+<td style="text-align:right;">
+0.6985967
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AMFITEATRU ECONOMIC
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7004271
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BRITISH JOURNAL OF MANAGEMENT
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7022575
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CALIFORNIA MANAGEMENT REVIEW
+</td>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7040879
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COMPARATIVE ECONOMIC RESEARCH
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7059182
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CREATIVITY AND INNOVATION MANAGEMENT
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7077486
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIA POLITICA
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7095790
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC GEOGRAPHY
+</td>
+<td style="text-align:right;">
+81
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7114094
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMICS AND SOCIOLOGY
+</td>
+<td style="text-align:right;">
+82
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7132398
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EURASIAN BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7150702
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EUROPEAN MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7169005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GLOBAL BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7187309
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRIAL MARKETING MANAGEMENT
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7205613
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL ENTREPRENEURSHIP AND MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7223917
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF AUTOMOTIVE TECHNOLOGY AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7242221
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTREPRENEURSHIP AND INNOVATION MANAGEMENT
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7260525
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF MANAGING PROJECTS IN BUSINESS
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7278829
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF PRODUCT DEVELOPMENT
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7297132
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF PRODUCTIVITY AND PERFORMANCE MANAGEMENT
+</td>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7315436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGICAL LEARNING, INNOVATION AND DEVELOPMENT
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7333740
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGY AND GLOBALISATION
+</td>
+<td style="text-align:right;">
+94
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7352044
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGY INTELLIGENCE AND PLANNING
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7370348
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGY MANAGEMENT AND SUSTAINABLE DEVELOPMENT
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7388652
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS AND INDUSTRIAL MARKETING
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7406955
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF OPEN INNOVATION: TECHNOLOGY, MARKET, AND COMPLEXITY
+</td>
+<td style="text-align:right;">
+98
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7425259
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ORGANIZATIONAL CHANGE MANAGEMENT
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7443563
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT AND PRODUCTION ENGINEERING REVIEW
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7461867
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MEDITERRANEAN JOURNAL OF SOCIAL SCIENCES
+</td>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7480171
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIT SLOAN MANAGEMENT REVIEW
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7498475
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PRODUCTION AND OPERATIONS MANAGEMENT
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7516779
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESOURCES POLICY
+</td>
+<td style="text-align:right;">
+104
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7535082
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REVIEW OF MANAGERIAL SCIENCE
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7553386
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SOCIAL RESPONSIBILITY JOURNAL
+</td>
+<td style="text-align:right;">
+106
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7571690
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRATEGIC DIRECTION
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7589994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRATEGIC MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7608298
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRUCTURAL CHANGE AND ECONOMIC DYNAMICS
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7626602
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SUPPLY CHAIN MANAGEMENT
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7644905
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOTAL QUALITY MANAGEMENT AND BUSINESS EXCELLENCE
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7663209
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM ECONOMICS
+</td>
+<td style="text-align:right;">
+112
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7681513
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM MANAGEMENT
+</td>
+<td style="text-align:right;">
+113
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7699817
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UNIVERSIA BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0018304
+</td>
+<td style="text-align:right;">
+0.7718121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACADEMY OF STRATEGIC MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7730323
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACCOUNTING, AUDITING AND ACCOUNTABILITY JOURNAL
+</td>
+<td style="text-align:right;">
+116
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7742526
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACTA LOGISTICA
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7754728
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGRICULTURAL AND FOOD ECONOMICS
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7766931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ANNALS OF TOURISM RESEARCH
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7779134
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASIAN JOURNAL OF TECHNOLOGY INNOVATION
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7791336
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AUSTRALASIAN MARKETING JOURNAL
+</td>
+<td style="text-align:right;">
+121
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7803539
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS HORIZONS
+</td>
+<td style="text-align:right;">
+122
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7815741
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS PROCESS MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+123
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7827944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COGENT BUSINESS AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+124
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7840146
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COMPETITIVENESS REVIEW
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7852349
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONSTRUCTION MANAGEMENT AND ECONOMICS
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7864552
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CORPORATE GOVERNANCE
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7876754
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E A M: EKONOMIE A MANAGEMENT
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7888957
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC COMPUTATION AND ECONOMIC CYBERNETICS STUDIES AND RESEARCH
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7901159
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC MODELLING
+</td>
+<td style="text-align:right;">
+130
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7913362
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMICS AND POLICY OF ENERGY AND THE ENVIRONMENT
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7925564
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EMERALD EMERGING MARKETS CASE STUDIES
+</td>
+<td style="text-align:right;">
+132
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7937767
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENVIRONMENT, DEVELOPMENT AND SUSTAINABILITY
+</td>
+<td style="text-align:right;">
+133
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7949969
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENVIRONMENTAL &amp; RESOURCE ECONOMICS
+</td>
+<td style="text-align:right;">
+134
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7962172
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EUROPEAN RESEARCH STUDIES JOURNAL
+</td>
+<td style="text-align:right;">
+135
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7974375
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FIBRES AND TEXTILES IN EASTERN EUROPE
+</td>
+<td style="text-align:right;">
+136
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7986577
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRIAL AND COMMERCIAL TRAINING
+</td>
+<td style="text-align:right;">
+137
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.7998780
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRIAL AND CORPORATE CHANGE
+</td>
+<td style="text-align:right;">
+138
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8010982
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRIAL ENGINEERING AND MANAGEMENT SYSTEMS
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8023185
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INSTITUTIONS AND ECONOMIES
+</td>
+<td style="text-align:right;">
+140
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8035387
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF CONTEMPORARY HOSPITALITY MANAGEMENT
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8047590
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF DESIGN
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8059793
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ECONOMICS AND FINANCIAL ISSUES
+</td>
+<td style="text-align:right;">
+143
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8071995
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTREPRENEURIAL BEHAVIOUR AND RESEARCH
+</td>
+<td style="text-align:right;">
+144
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8084198
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTREPRENEURIAL VENTURING
+</td>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8096400
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTREPRENEURSHIP AND SMALL BUSINESS
+</td>
+<td style="text-align:right;">
+146
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8108603
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF FORESIGHT AND INNOVATION POLICY
+</td>
+<td style="text-align:right;">
+147
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8120805
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF GREEN ECONOMICS
+</td>
+<td style="text-align:right;">
+148
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8133008
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INNOVATION AND LEARNING
+</td>
+<td style="text-align:right;">
+149
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8145210
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INNOVATION AND TECHNOLOGY MANAGEMENT
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8157413
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF KNOWLEDGE-BASED DEVELOPMENT
+</td>
+<td style="text-align:right;">
+151
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8169616
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF LOGISTICS MANAGEMENT
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8181818
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF PROJECT MANAGEMENT
+</td>
+<td style="text-align:right;">
+153
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8194021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF SCIENTIFIC AND TECHNOLOGY RESEARCH
+</td>
+<td style="text-align:right;">
+154
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8206223
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF SERVICES AND OPERATIONS MANAGEMENT
+</td>
+<td style="text-align:right;">
+155
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8218426
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF SOCIAL ECONOMICS
+</td>
+<td style="text-align:right;">
+156
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8230628
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TECHNOLOGY
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8242831
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL REVIEW OF APPLIED ECONOMICS
+</td>
+<td style="text-align:right;">
+158
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8255034
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JAHRBUCHER FUR NATIONALOKONOMIE UND STATISTIK
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8267236
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ADVANCED RESEARCH IN LAW AND ECONOMICS
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8279439
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF APPLIED ECONOMIC SCIENCES
+</td>
+<td style="text-align:right;">
+161
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8291641
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS AND RETAIL MANAGEMENT RESEARCH
+</td>
+<td style="text-align:right;">
+162
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8303844
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS ECONOMICS AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+163
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8316046
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMIC BEHAVIOR AND ORGANIZATION
+</td>
+<td style="text-align:right;">
+164
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8328249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF HIGH TECHNOLOGY MANAGEMENT RESEARCH
+</td>
+<td style="text-align:right;">
+165
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8340451
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INDUSTRIAL ENGINEERING AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+166
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8352654
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MANAGEMENT AND ORGANIZATION
+</td>
+<td style="text-align:right;">
+167
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8364857
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MANAGEMENT DEVELOPMENT
+</td>
+<td style="text-align:right;">
+168
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8377059
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MODELLING IN MANAGEMENT
+</td>
+<td style="text-align:right;">
+169
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8389262
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SELF-GOVERNANCE AND MANAGEMENT ECONOMICS
+</td>
+<td style="text-align:right;">
+170
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8401464
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SMALL BUSINESS AND ENTERPRISE DEVELOPMENT
+</td>
+<td style="text-align:right;">
+171
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8413667
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF STRATEGIC MARKETING
+</td>
+<td style="text-align:right;">
+172
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8425869
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SUPPLY CHAIN MANAGEMENT
+</td>
+<td style="text-align:right;">
+173
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8438072
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LONG RANGE PLANNING
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8450275
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT SCIENCE LETTERS
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8462477
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE POLICY
+</td>
+<td style="text-align:right;">
+176
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8474680
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MULTINATIONAL BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+177
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8486882
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OXFORD REVIEW OF ECONOMIC POLICY
+</td>
+<td style="text-align:right;">
+178
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8499085
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PANOECONOMICUS
+</td>
+<td style="text-align:right;">
+179
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8511287
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCANDINAVIAN JOURNAL OF MANAGEMENT
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8523490
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SERVICE BUSINESS
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8535692
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SERVICE INDUSTRIES JOURNAL
+</td>
+<td style="text-align:right;">
+182
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8547895
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SUSTAINABLE BUSINESS
+</td>
+<td style="text-align:right;">
+183
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8560098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGY IN SOCIETY
+</td>
+<td style="text-align:right;">
+184
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8572300
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM RECREATION RESEARCH
+</td>
+<td style="text-align:right;">
+185
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8584503
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WSEAS TRANSACTIONS ON BUSINESS AND ECONOMICS
+</td>
+<td style="text-align:right;">
+186
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0012203
+</td>
+<td style="text-align:right;">
+0.8596705
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4OR
+</td>
+<td style="text-align:right;">
+187
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8602807
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACADEMIA REVISTA LATINOAMERICANA DE ADMINISTRACION
+</td>
+<td style="text-align:right;">
+188
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8608908
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACADEMY OF ACCOUNTING AND FINANCIAL STUDIES JOURNAL
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8615009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ACTION RESEARCH
+</td>
+<td style="text-align:right;">
+190
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8621110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AESTIMUM
+</td>
+<td style="text-align:right;">
+191
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8627212
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AFRICAN JOURNAL OF HOSPITALITY, TOURISM AND LEISURE
+</td>
+<td style="text-align:right;">
+192
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8633313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGROALIMENTARIA
+</td>
+<td style="text-align:right;">
+193
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8639414
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AMERICAN JOURNAL OF AGRICULTURAL ECONOMICS
+</td>
+<td style="text-align:right;">
+194
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8645516
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ANNUAL REVIEW OF RESOURCE ECONOMICS
+</td>
+<td style="text-align:right;">
+195
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8651617
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+APPLIED ECONOMICS LETTERS
+</td>
+<td style="text-align:right;">
+196
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8657718
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+APPLIED GEOGRAPHY
+</td>
+<td style="text-align:right;">
+197
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8663819
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ARCHITECTURAL ENGINEERING AND DESIGN MANAGEMENT
+</td>
+<td style="text-align:right;">
+198
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8669921
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASIA PACIFIC JOURNAL OF MANAGEMENT
+</td>
+<td style="text-align:right;">
+199
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8676022
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASIA PACIFIC JOURNAL OF TOURISM RESEARCH
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8682123
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASIAN ACADEMY OF MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+201
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8688225
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AUSTRALASIAN JOURNAL OF CONSTRUCTION ECONOMICS AND BUILDING
+</td>
+<td style="text-align:right;">
+202
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8694326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AUSTRALIAN ECONOMIC HISTORY REVIEW
+</td>
+<td style="text-align:right;">
+203
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8700427
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B.E. JOURNAL OF ECONOMIC ANALYSIS AND POLICY
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8706528
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BALTIC JOURNAL OF MANAGEMENT
+</td>
+<td style="text-align:right;">
+205
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8712630
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BAR - BRAZILIAN ADMINISTRATION REVIEW
+</td>
+<td style="text-align:right;">
+206
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8718731
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BENCHMARKING
+</td>
+<td style="text-align:right;">
+207
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8724832
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BOBBIN
+</td>
+<td style="text-align:right;">
+208
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8730933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS AND ECONOMIC HORIZONS
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8737035
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS ETHICS
+</td>
+<td style="text-align:right;">
+210
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8743136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS STRATEGY AND DEVELOPMENT
+</td>
+<td style="text-align:right;">
+211
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8749237
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BUSINESS: THEORY AND PRACTICE
+</td>
+<td style="text-align:right;">
+212
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8755339
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CAMBRIDGE JOURNAL OF REGIONS, ECONOMY AND SOCIETY
+</td>
+<td style="text-align:right;">
+213
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8761440
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CHINA AND WORLD ECONOMY
+</td>
+<td style="text-align:right;">
+214
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8767541
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CHINESE MANAGEMENT STUDIES
+</td>
+<td style="text-align:right;">
+215
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8773642
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLIMATE CHANGE ECONOMICS
+</td>
+<td style="text-align:right;">
+216
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8779744
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COMMUNICATION TODAY
+</td>
+<td style="text-align:right;">
+217
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8785845
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONTADURIA Y ADMINISTRACION
+</td>
+<td style="text-align:right;">
+218
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8791946
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONTRIBUTIONS TO ECONOMICS
+</td>
+<td style="text-align:right;">
+219
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8798048
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CORPORATE GOVERNANCE: THE INTERNATIONAL JOURNAL OF BUSINESS IN SOCIETY
+</td>
+<td style="text-align:right;">
+220
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8804149
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CRITICAL PERSPECTIVES ON INTERNATIONAL BUSINESS
+</td>
+<td style="text-align:right;">
+221
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8810250
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CRITICAL STUDIES ON CORPORATE RESPONSIBILITY, GOVERNANCE AND SUSTAINABILITY
+</td>
+<td style="text-align:right;">
+222
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8816351
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CUADERNOS DE GESTION
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8822453
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CURRENT ISSUES IN TOURISM
+</td>
+<td style="text-align:right;">
+224
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8828554
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DECISION SCIENCES
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8834655
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEVELOPMENT AND LEARNING IN ORGANIZATIONS
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8840757
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DIRECCION Y ORGANIZACION
+</td>
+<td style="text-align:right;">
+227
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8846858
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC ANNALS-XXI
+</td>
+<td style="text-align:right;">
+228
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8852959
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC DEVELOPMENT QUARTERLY
+</td>
+<td style="text-align:right;">
+229
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8859060
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC SYSTEMS RESEARCH
+</td>
+<td style="text-align:right;">
+230
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8865162
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMICS BULLETIN
+</td>
+<td style="text-align:right;">
+231
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8871263
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMICS LETTERS
+</td>
+<td style="text-align:right;">
+232
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8877364
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EMERGING MARKETS FINANCE AND TRADE
+</td>
+<td style="text-align:right;">
+233
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8883466
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENGINEERING ECONOMICS
+</td>
+<td style="text-align:right;">
+234
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8889567
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENGINEERING MANAGEMENT IN PRODUCTION AND SERVICES
+</td>
+<td style="text-align:right;">
+235
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8895668
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENRICHING COMMUNICATIONS
+</td>
+<td style="text-align:right;">
+236
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8901769
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENTREPRENEURSHIP AND SUSTAINABILITY ISSUES
+</td>
+<td style="text-align:right;">
+237
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8907871
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENVIRONMENT AND DEVELOPMENT ECONOMICS
+</td>
+<td style="text-align:right;">
+238
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8913972
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ESPACIOS
+</td>
+<td style="text-align:right;">
+239
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8920073
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EUROMED JOURNAL OF BUSINESS
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8926174
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EUROPEAN JOURNAL OF MARKETING
+</td>
+<td style="text-align:right;">
+241
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8932276
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EUROPEAN JOURNAL OF TRAINING AND DEVELOPMENT
+</td>
+<td style="text-align:right;">
+242
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8938377
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVALUATION AND PROGRAM PLANNING
+</td>
+<td style="text-align:right;">
+243
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8944478
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAMILY BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+244
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8950580
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FINANCE A UVER - CZECH JOURNAL OF ECONOMICS AND FINANCE
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8956681
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLEXO
+</td>
+<td style="text-align:right;">
+246
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8962782
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FOOD POLICY
+</td>
+<td style="text-align:right;">
+247
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8968883
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FORBES
+</td>
+<td style="text-align:right;">
+248
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8974985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FORESIGHT
+</td>
+<td style="text-align:right;">
+249
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8981086
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FORESIGHT AND STI GOVERNANCE
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8987187
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FOREST POLICY AND ECONOMICS
+</td>
+<td style="text-align:right;">
+251
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8993289
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GLOBAL BUSINESS AND ORGANIZATIONAL EXCELLENCE
+</td>
+<td style="text-align:right;">
+252
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.8999390
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GLOBAL JOURNAL OF FLEXIBLE SYSTEMS MANAGEMENT
+</td>
+<td style="text-align:right;">
+253
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9005491
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGHWAYS AND TRANSPORTATION
+</td>
+<td style="text-align:right;">
+254
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9011592
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRIAL FABRIC PRODUCTS REVIEW
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9017694
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRY AND HIGHER EDUCATION
+</td>
+<td style="text-align:right;">
+256
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9023795
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INDUSTRY WEEK
+</td>
+<td style="text-align:right;">
+257
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9029896
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INNOVAR
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9035998
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERECONOMICS
+</td>
+<td style="text-align:right;">
+259
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9042099
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+260
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9048200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL ELECTRONIC JOURNAL FOR LEADERSHIP IN LEARNING
+</td>
+<td style="text-align:right;">
+261
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9054301
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL FOOD AND AGRIBUSINESS MANAGEMENT REVIEW
+</td>
+<td style="text-align:right;">
+262
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9060403
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL GAME THEORY REVIEW
+</td>
+<td style="text-align:right;">
+263
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9066504
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL FOR HOUSING SCIENCE AND ITS APPLICATIONS
+</td>
+<td style="text-align:right;">
+264
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9072605
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF BUSINESS
+</td>
+<td style="text-align:right;">
+265
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9078707
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF BUSINESS AND GLOBALISATION
+</td>
+<td style="text-align:right;">
+266
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9084808
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF BUSINESS ENVIRONMENT
+</td>
+<td style="text-align:right;">
+267
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9090909
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF BUSINESS PERFORMANCE MANAGEMENT
+</td>
+<td style="text-align:right;">
+268
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9097010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF CONSTRUCTION MANAGEMENT
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9103112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF E-BUSINESS RESEARCH
+</td>
+<td style="text-align:right;">
+270
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9109213
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ECONOMIC PERSPECTIVES
+</td>
+<td style="text-align:right;">
+271
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9115314
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTERPRISE INFORMATION SYSTEMS
+</td>
+<td style="text-align:right;">
+272
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9121415
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ENTERPRISE NETWORK MANAGEMENT
+</td>
+<td style="text-align:right;">
+273
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9127517
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF GENDER AND ENTREPRENEURSHIP
+</td>
+<td style="text-align:right;">
+274
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9133618
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF GLOBALISATION AND SMALL BUSINESS
+</td>
+<td style="text-align:right;">
+275
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9139719
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF HUMAN RESOURCES DEVELOPMENT AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+276
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9145821
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INDUSTRIAL ENGINEERING AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+277
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9151922
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INFORMATION SYSTEMS AND CHANGE MANAGEMENT
+</td>
+<td style="text-align:right;">
+278
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9158023
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF INTELLIGENT ENTERPRISE
+</td>
+<td style="text-align:right;">
+279
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9164124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF KNOWLEDGE, CULTURE AND CHANGE MANAGEMENT
+</td>
+<td style="text-align:right;">
+280
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9170226
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF LEARNING AND INTELLECTUAL CAPITAL
+</td>
+<td style="text-align:right;">
+281
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9176327
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF MANAGEMENT
+</td>
+<td style="text-align:right;">
+282
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9182428
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF MANAGEMENT IN EDUCATION
+</td>
+<td style="text-align:right;">
+283
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9188530
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF MANAGEMENT PRACTICE
+</td>
+<td style="text-align:right;">
+284
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9194631
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF MANAGEMENT REVIEWS
+</td>
+<td style="text-align:right;">
+285
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9200732
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF ORGANIZATIONAL ANALYSIS
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9206833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF SERVICES, ECONOMICS AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+287
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9212935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF SYSTEMATIC INNOVATION
+</td>
+<td style="text-align:right;">
+288
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9219036
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL JOURNAL OF TOURISM RESEARCH
+</td>
+<td style="text-align:right;">
+289
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9225137
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL PAPERWORLD IPW
+</td>
+<td style="text-align:right;">
+290
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9231239
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERNATIONAL REVIEW OF ENVIRONMENTAL AND RESOURCE ECONOMICS
+</td>
+<td style="text-align:right;">
+291
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9237340
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JASSA
+</td>
+<td style="text-align:right;">
+292
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9243441
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF AGRIBUSINESS IN DEVELOPING AND EMERGING ECONOMIES
+</td>
+<td style="text-align:right;">
+293
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9249542
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF APPLIED BUSINESS RESEARCH
+</td>
+<td style="text-align:right;">
+294
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9255644
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ASIAN FINANCE, ECONOMICS AND BUSINESS
+</td>
+<td style="text-align:right;">
+295
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9261745
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS-TO-BUSINESS MARKETING
+</td>
+<td style="text-align:right;">
+296
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9267846
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS ECONOMICS
+</td>
+<td style="text-align:right;">
+297
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9273948
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS LOGISTICS
+</td>
+<td style="text-align:right;">
+298
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9280049
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF BUSINESS STRATEGY
+</td>
+<td style="text-align:right;">
+299
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9286150
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF CHINESE ECONOMIC AND BUSINESS STUDIES
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9292251
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF COMMERCIAL BIOTECHNOLOGY
+</td>
+<td style="text-align:right;">
+301
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9298353
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF CONSUMER MARKETING
+</td>
+<td style="text-align:right;">
+302
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9304454
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF EAST EUROPEAN MANAGEMENT STUDIES
+</td>
+<td style="text-align:right;">
+303
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9310555
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMIC GEOGRAPHY
+</td>
+<td style="text-align:right;">
+304
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9316656
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMIC SURVEYS
+</td>
+<td style="text-align:right;">
+305
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9322758
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMIC THEORY
+</td>
+<td style="text-align:right;">
+306
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9328859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMICS AND BUSINESS
+</td>
+<td style="text-align:right;">
+307
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9334960
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMICS AND ECONOMIC EDUCATION RESEARCH
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9341062
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ECONOMICS AND MANAGEMENT STRATEGY
+</td>
+<td style="text-align:right;">
+309
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9347163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF EDUCATION AND WORK
+</td>
+<td style="text-align:right;">
+310
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9353264
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ENTERPRISE INFORMATION MANAGEMENT
+</td>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9359365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF ENTREPRENEURSHIP EDUCATION
+</td>
+<td style="text-align:right;">
+312
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9365467
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF EUROMARKETING
+</td>
+<td style="text-align:right;">
+313
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9371568
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF FAMILY BUSINESS MANAGEMENT
+</td>
+<td style="text-align:right;">
+314
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9377669
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF FASHION MARKETING AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+315
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9383771
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF FOOD PRODUCTS MARKETING
+</td>
+<td style="text-align:right;">
+316
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9389872
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF HOSPITALITY AND TOURISM MANAGEMENT
+</td>
+<td style="text-align:right;">
+317
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9395973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INTERNATIONAL CONSUMER MARKETING
+</td>
+<td style="text-align:right;">
+318
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9402074
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INTERNATIONAL MANAGEMENT
+</td>
+<td style="text-align:right;">
+319
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9408176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INTERNATIONAL MARKETING
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9414277
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INTERNATIONAL STUDIES
+</td>
+<td style="text-align:right;">
+321
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9420378
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF INTERNET BANKING AND COMMERCE
+</td>
+<td style="text-align:right;">
+322
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9426480
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MACROMARKETING
+</td>
+<td style="text-align:right;">
+323
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9432581
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MANAGEMENT ACCOUNTING RESEARCH
+</td>
+<td style="text-align:right;">
+324
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9438682
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MANAGEMENT IN ENGINEERING
+</td>
+<td style="text-align:right;">
+325
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9444783
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MARKETING
+</td>
+<td style="text-align:right;">
+326
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9450885
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF MARKETING MANAGEMENT
+</td>
+<td style="text-align:right;">
+327
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9456986
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF PRODUCT AND BRAND MANAGEMENT
+</td>
+<td style="text-align:right;">
+328
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9463087
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF PUBLIC AND NONPROFIT AFFAIRS
+</td>
+<td style="text-align:right;">
+329
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9469189
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF PUBLIC ECONOMICS
+</td>
+<td style="text-align:right;">
+330
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9475290
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF PURCHASING AND SUPPLY MANAGEMENT
+</td>
+<td style="text-align:right;">
+331
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9481391
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF RESPONSIBLE INNOVATION
+</td>
+<td style="text-align:right;">
+332
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9487492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF RETAILING
+</td>
+<td style="text-align:right;">
+333
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9493594
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF RISK RESEARCH
+</td>
+<td style="text-align:right;">
+334
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9499695
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SCIENCE AND TECHNOLOGY POLICY IN CHINA
+</td>
+<td style="text-align:right;">
+335
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9505796
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SMALL BUSINESS AND ENTREPRENEURSHIP
+</td>
+<td style="text-align:right;">
+336
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9511897
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SOCIAL SCIENCES RESEARCH
+</td>
+<td style="text-align:right;">
+337
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9517999
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SOCIO-ECONOMICS
+</td>
+<td style="text-align:right;">
+338
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9524100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF STRATEGIC INFORMATION SYSTEMS
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9530201
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF STRATEGY AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+340
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9536303
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF SUSTAINABLE FINANCE AND INVESTMENT
+</td>
+<td style="text-align:right;">
+341
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9542404
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF TECHNOLOGY TRANSFER
+</td>
+<td style="text-align:right;">
+342
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9548505
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF TEXTILE AND APPAREL, TECHNOLOGY AND MANAGEMENT
+</td>
+<td style="text-align:right;">
+343
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9554606
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF THE ACADEMY OF MARKETING SCIENCE
+</td>
+<td style="text-align:right;">
+344
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9560708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF TRAVEL RESEARCH
+</td>
+<td style="text-align:right;">
+345
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9566809
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF WORKPLACE LEARNING
+</td>
+<td style="text-align:right;">
+346
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9572910
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JOURNAL OF WORLD BUSINESS
+</td>
+<td style="text-align:right;">
+347
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9579012
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KNOWLEDGE AND PROCESS MANAGEMENT
+</td>
+<td style="text-align:right;">
+348
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9585113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KNOWLEDGE MANAGEMENT RESEARCH AND PRACTICE
+</td>
+<td style="text-align:right;">
+349
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9591214
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LEARNING ORGANIZATION
+</td>
+<td style="text-align:right;">
+350
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9597315
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOGISTICS RESEARCH
+</td>
+<td style="text-align:right;">
+351
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9603417
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MALAYSIAN JOURNAL OF CONSUMER AND FAMILY ECONOMICS
+</td>
+<td style="text-align:right;">
+352
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9609518
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT (FRANCE)
+</td>
+<td style="text-align:right;">
+353
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9615619
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT AND MARKETING
+</td>
+<td style="text-align:right;">
+354
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9621721
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT RESEARCH NEWS
+</td>
+<td style="text-align:right;">
+355
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9627822
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGEMENT SYSTEMS IN PRODUCTION ENGINEERING
+</td>
+<td style="text-align:right;">
+356
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9633923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANAGERIAL AUDITING JOURNAL
+</td>
+<td style="text-align:right;">
+357
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9640024
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANUFACTURING AND SERVICE OPERATIONS MANAGEMENT
+</td>
+<td style="text-align:right;">
+358
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9646126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIS QUARTERLY: MANAGEMENT INFORMATION SYSTEMS
+</td>
+<td style="text-align:right;">
+359
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9652227
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NANKAI BUSINESS REVIEW INTERNATIONAL
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9658328
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OFFICIAL BOARD MARKETS
+</td>
+<td style="text-align:right;">
+361
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9664430
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OMEGA (UNITED KINGDOM)
+</td>
+<td style="text-align:right;">
+362
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9670531
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORGANIZATION
+</td>
+<td style="text-align:right;">
+363
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9676632
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORGANIZATION SCIENCE
+</td>
+<td style="text-align:right;">
+364
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9682733
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORGANIZATION STUDIES
+</td>
+<td style="text-align:right;">
+365
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9688835
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORGANIZATIONAL DYNAMICS
+</td>
+<td style="text-align:right;">
+366
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9694936
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PACKAGING DIGEST
+</td>
+<td style="text-align:right;">
+367
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9701037
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PAKISTAN JOURNAL OF COMMERCE AND SOCIAL SCIENCE
+</td>
+<td style="text-align:right;">
+368
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9707138
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PAPER ASIA
+</td>
+<td style="text-align:right;">
+369
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9713240
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PAPER, FILM AND FOIL CONVERTER
+</td>
+<td style="text-align:right;">
+370
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9719341
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PPI PULP AND PAPER INTERNATIONAL
+</td>
+<td style="text-align:right;">
+371
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9725442
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROBLEMS AND PERSPECTIVES IN MANAGEMENT
+</td>
+<td style="text-align:right;">
+372
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9731544
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROCEEDINGS OF INSTITUTION OF CIVIL ENGINEERS: MANAGEMENT, PROCUREMENT AND LAW
+</td>
+<td style="text-align:right;">
+373
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9737645
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROJECT MANAGEMENT JOURNAL
+</td>
+<td style="text-align:right;">
+374
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9743746
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PUBLIC MANAGEMENT REVIEW
+</td>
+<td style="text-align:right;">
+375
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9749847
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PUBLIC PERSONNEL MANAGEMENT
+</td>
+<td style="text-align:right;">
+376
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9755949
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PUBLIC SECTOR ECONOMICS
+</td>
+<td style="text-align:right;">
+377
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9762050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PUBLISHING RESEARCH QUARTERLY
+</td>
+<td style="text-align:right;">
+378
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9768151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+QUALITY INNOVATION PROSPERITY
+</td>
+<td style="text-align:right;">
+379
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9774253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RECYCLING TODAY
+</td>
+<td style="text-align:right;">
+380
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9780354
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REGIONAL STUDIES, REGIONAL SCIENCE
+</td>
+<td style="text-align:right;">
+381
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9786455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESEARCH IN TRANSPORTATION ECONOMICS
+</td>
+<td style="text-align:right;">
+382
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9792556
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESEARCH IN WORLD ECONOMY
+</td>
+<td style="text-align:right;">
+383
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9798658
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RESOURCES, CONSERVATION AND RECYCLING: X
+</td>
+<td style="text-align:right;">
+384
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9804759
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REVIEW OF ENVIRONMENTAL ECONOMICS AND POLICY
+</td>
+<td style="text-align:right;">
+385
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9810860
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REVIEW OF POLITICAL ECONOMY
+</td>
+<td style="text-align:right;">
+386
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9816962
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REVUE D’ECONOMIE INDUSTRIELLE
+</td>
+<td style="text-align:right;">
+387
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9823063
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REVUE DE L’OFCE
+</td>
+<td style="text-align:right;">
+388
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9829164
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIVISTA DI STUDI SULLA SOSTENIBILITA
+</td>
+<td style="text-align:right;">
+389
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9835265
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCIENCE AND ENGINEERING ETHICS
+</td>
+<td style="text-align:right;">
+390
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9841367
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SERVICE SCIENCE
+</td>
+<td style="text-align:right;">
+391
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9847468
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SINGAPORE ECONOMIC REVIEW
+</td>
+<td style="text-align:right;">
+392
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9853569
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SOCIO-ECONOMIC PLANNING SCIENCES
+</td>
+<td style="text-align:right;">
+393
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9859671
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SOUTH ASIAN JOURNAL OF BUSINESS AND MANAGEMENT CASES
+</td>
+<td style="text-align:right;">
+394
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9865772
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SPACE AND CULTURE, INDIA
+</td>
+<td style="text-align:right;">
+395
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9871873
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRATEGIC CHANGE
+</td>
+<td style="text-align:right;">
+396
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9877974
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STUDIES ON RUSSIAN ECONOMIC DEVELOPMENT
+</td>
+<td style="text-align:right;">
+397
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9884076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SYNTHESIS LECTURES ON TECHNOLOGY, MANAGEMENT AND ENTREPRENEURSHIP
+</td>
+<td style="text-align:right;">
+398
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9890177
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SYSTEMS RESEARCH AND BEHAVIORAL SCIENCE
+</td>
+<td style="text-align:right;">
+399
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9896278
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T AND D
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9902379
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TECHNOLOGY INNOVATION MANAGEMENT REVIEW
+</td>
+<td style="text-align:right;">
+401
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9908481
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TEXTILE ASIA
+</td>
+<td style="text-align:right;">
+402
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9914582
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TEXTILE RENTAL
+</td>
+<td style="text-align:right;">
+403
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9920683
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERBIRD INTERNATIONAL BUSINESS REVIEW
+</td>
+<td style="text-align:right;">
+404
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9926785
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM
+</td>
+<td style="text-align:right;">
+405
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9932886
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM ANALYSIS
+</td>
+<td style="text-align:right;">
+406
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9938987
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM AND HOSPITALITY RESEARCH
+</td>
+<td style="text-align:right;">
+407
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9945088
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM PLANNING AND DEVELOPMENT
+</td>
+<td style="text-align:right;">
+408
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9951190
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOURISM REVIEW
+</td>
+<td style="text-align:right;">
+409
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9957291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRANSFORMATIONS IN BUSINESS AND ECONOMICS
+</td>
+<td style="text-align:right;">
+410
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9963392
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRANSPORTATION RESEARCH PART E: LOGISTICS AND TRANSPORTATION REVIEW
+</td>
+<td style="text-align:right;">
+411
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9969494
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VIKALPA
+</td>
+<td style="text-align:right;">
+412
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9975595
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VINE JOURNAL OF INFORMATION AND KNOWLEDGE MANAGEMENT SYSTEMS
+</td>
+<td style="text-align:right;">
+413
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9981696
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINE ECONOMICS AND POLICY
+</td>
+<td style="text-align:right;">
+414
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9987797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WORLD ECONOMY
+</td>
+<td style="text-align:right;">
+415
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+0.9993899
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WORLD REVIEW OF ENTREPRENEURSHIP, MANAGEMENT AND SUSTAINABLE DEVELOPMENT
+</td>
+<td style="text-align:right;">
+416
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Zone 3
+</td>
+<td style="text-align:right;">
+0.0006101
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>plot(bl$graph)</code></pre>
+<p><img src="descripcion_files/figure-html/unnamed-chunk-11-1.png" width="864" /></p>
+</div>
+<div id="crecimiento-anual-de-las-revistas" class="section level3">
+<h3>3.3. Crecimiento anual de las revistas</h3>
+<pre class="r"><code>sg &lt;- sourceGrowth(df, top = 5, cdf = F)
+sg &lt;- sg %&gt;% tidyr::gather(var, val, 2:6)
+ggplot(sg, aes(Year,  val, group=var, color=var, shape=var)) + geom_point() + geom_line() + theme(legend.position = &quot;bottom&quot;, legend.key = element_blank(), legend.key.size=unit(1,&quot;point&quot;), legend.title = element_text(&quot;Artíulos&quot;)) +  guides(colour=guide_legend(nrow=5)) + ylab(&quot;Número de artículos&quot;) + xlab(&quot;Año&quot;)</code></pre>
+<p><img src="descripcion_files/figure-html/unnamed-chunk-12-1.png" width="768" /></p>
+</div>
+</div>
+<div id="d4" class="section level2">
+<h2>4. Análisis de autores</h2>
+<div id="autores-más-relevantes" class="section level3">
+<h3>4.1. Autores más relevantes</h3>
+<pre class="r"><code>ra &lt;- as.data.frame(s$MostProdAuthors)
+head(ra) %&gt;% kable() %&gt;% kable_styling(bootstrap_options=&quot;striped&quot;, full_width=F, position=&quot;left&quot;)</code></pre>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Authors
+</th>
+<th style="text-align:left;">
+Articles
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+<th style="text-align:left;">
+Articles Fractionalized
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+MAZZANTI M
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+LIAO Z
+</td>
+<td style="text-align:left;">
+10.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RENNINGS K
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+MAZZANTI M
+</td>
+<td style="text-align:left;">
+7.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIAO Z
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+RENNINGS K
+</td>
+<td style="text-align:left;">
+7.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SCARPELLINI S
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+NA NA
+</td>
+<td style="text-align:left;">
+6.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WANG Y
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+CHANG CH
+</td>
+<td style="text-align:left;">
+5.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEL RO P
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+WAGNER M
+</td>
+<td style="text-align:left;">
+5.58
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="producción-de-los-autores-en-el-tiempo" class="section level3">
+<h3>4.2. Producción de los autores en el tiempo</h3>
+<pre class="r"><code>ap &lt;- authorProdOverTime(df)</code></pre>
+<p><img src="descripcion_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+</div>
+<div id="d5" class="section level2">
+<h2>5. Análisis de Artículos</h2>
+<div id="artículos-citados-globalmente-gcs" class="section level3">
+<h3>5.1. Artículos citados globalmente (GCS)</h3>
+<pre class="r"><code>ac &lt;- as.data.frame(da$MostCitedPapers)
+head(ac) %&gt;% kable() %&gt;% kable_styling(bootstrap_options=&quot;striped&quot;, full_width=F, position=&quot;left&quot;)</code></pre>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Paper
+</th>
+<th style="text-align:right;">
+TC
+</th>
+<th style="text-align:right;">
+TCperYear
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1228
+</td>
+<td style="text-align:left;">
+MARKARD J, 2012, RES POLICY
+</td>
+<td style="text-align:right;">
+1003
+</td>
+<td style="text-align:right;">
+111.44444
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1563
+</td>
+<td style="text-align:left;">
+RENNINGS K, 2000, ECOL ECON
+</td>
+<td style="text-align:right;">
+911
+</td>
+<td style="text-align:right;">
+43.38095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1422
+</td>
+<td style="text-align:left;">
+SCHOT J, 2008, TECHNOL ANAL STRATEG MANAGE
+</td>
+<td style="text-align:right;">
+764
+</td>
+<td style="text-align:right;">
+58.76923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1167
+</td>
+<td style="text-align:left;">
+BOONS F, 2013, J CLEAN PROD
+</td>
+<td style="text-align:right;">
+657
+</td>
+<td style="text-align:right;">
+82.12500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1440
+</td>
+<td style="text-align:left;">
+HORBACH J, 2008, RES POLICY
+</td>
+<td style="text-align:right;">
+572
+</td>
+<td style="text-align:right;">
+44.00000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1487
+</td>
+<td style="text-align:left;">
+CHEN YS, 2006, J BUS ETHICS
+</td>
+<td style="text-align:right;">
+553
+</td>
+<td style="text-align:right;">
+36.86667
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="artículos-más-citados-localmente-lcs" class="section level3">
+<h3>5.2.Artículos más citados localmente (LCS)</h3>
+<pre class="r"><code>lc &lt;- localCitations(df, fast.search = F, sep = &quot;;&quot;)</code></pre>
+<pre><code>## 
+## SCOPUS DB: Searching local citations (LCS) by document titles (TI) and DOIs...
+## 
+## Found 781 documents with no empty Local Citations (LCS)</code></pre>
+<pre class="r"><code>pc &lt;- as.data.frame(lc$Papers)
+head(pc) %&gt;% kable() %&gt;% kable_styling(bootstrap_options=&quot;striped&quot;, full_width=F, position=&quot;left&quot;)</code></pre>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Paper
+</th>
+<th style="text-align:left;">
+DOI
+</th>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:right;">
+LCS
+</th>
+<th style="text-align:right;">
+GCS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1356
+</td>
+<td style="text-align:left;">
+CARRILLO-HERMOSILLA J, 2010, J CLEAN PROD
+</td>
+<td style="text-align:left;">
+10.1016/j.jclepro.2010.02.014
+</td>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:right;">
+154
+</td>
+<td style="text-align:right;">
+358
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1487
+</td>
+<td style="text-align:left;">
+CHEN YS, 2006, J BUS ETHICS
+</td>
+<td style="text-align:left;">
+10.1007/s10551-006-9025-5
+</td>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:right;">
+151
+</td>
+<td style="text-align:right;">
+553
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1237
+</td>
+<td style="text-align:left;">
+DE MARCHI V, 2012, RES POLICY
+</td>
+<td style="text-align:left;">
+10.1016/j.respol.2011.10.002
+</td>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:right;">
+388
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1563
+</td>
+<td style="text-align:left;">
+RENNINGS K, 2000, ECOL ECON
+</td>
+<td style="text-align:left;">
+10.1016/S0921-8009(99)00112-3
+</td>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+911
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1535
+</td>
+<td style="text-align:left;">
+BRUNNERMEIER SB, 2003, J ENVIRON ECON MANAGE
+</td>
+<td style="text-align:left;">
+10.1016/S0095-0696(02)00058-X
+</td>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:right;">
+123
+</td>
+<td style="text-align:right;">
+519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1231
+</td>
+<td style="text-align:left;">
+KESIDOU E, 2012, RES POLICY
+</td>
+<td style="text-align:left;">
+10.1016/j.respol.2012.01.005
+</td>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+248
+</td>
+</tr>
+</tbody>
+</table>
+<p>Diagrama de dispersión entre el LCS y el GCS. Esto permite analizar si el área de investigación comparte artículos fuera de esta área o es excluyente.</p>
+<pre class="r"><code>ggplot(pc, aes(GCS, LCS, color=Year)) + geom_point() + scale_x_continuous(trans = &quot;log2&quot;) + scale_y_continuous(trans = &quot;log2&quot;) +  scale_color_continuous(type = &quot;viridis&quot;)</code></pre>
+<p><img src="descripcion_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="afiliaciones-y-países" class="section level3">
+<h3>6. Afiliaciones y países</h3>
+<pre class="r"><code>afp &lt;- as.data.frame(da$FirstAffiliation)
+colnames(afp)[1] &lt;- &quot;fp&quot;
+afp &lt;- afp %&gt;% count(fp) %&gt;% group_by(fp)
+head(afp) %&gt;% kable() %&gt;% kable_styling(bootstrap_options=&quot;striped&quot;, full_width=F, position=&quot;left&quot;)</code></pre>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+fp
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AALBORG UNIVERSITY
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AALTO UNIVERSITY
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AALTO UNIVERSITY SCHOOL OF BUSINESS
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AARHUS UNIVERSITY
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABDULLAH GL UNIVERSITY
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABU DHABI UNIVERSITY
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
