@@ -8,7 +8,7 @@ output:
 site: distill::distill_website
 ---
 
-<img src="C:/Users/User/Google Drive/Web_pages/bibliometria_r_rev-lit/wf_busqueda.png" alt="wf1" title="wf1" width="640" height="225" />
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/wf_busqueda.png" alt="wf1" title="wf1" width="640" height="225" />
 
 # Mapeo de la ciencia
 La bibliometría se puede aplicar al análisis de desempeño y al mapeo de la ciencia (van Eck y Waltman, 2014). El mapeo de la ciencia es un método bibliométrico que examina cómo las diferentes unidades de análisis (autores, artículos, revistas, instituciones, etc.) se relacionan entre si. Para este curso, adapté el flujo de trabajo de Zupic y Carter (2015), e incluí unas secciones las cuales considero esenciales.

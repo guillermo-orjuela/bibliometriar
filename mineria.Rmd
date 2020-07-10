@@ -8,7 +8,7 @@ output:
 site: distill::distill_website
 ---
 
-<img src="C:/Users/User/Google Drive/Web_pages/bibliometria_r_rev-lit/wf_mineria.png" alt="wf1" title="wf1" width="640" height="225" />
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/wf_mineria.png" alt="wf1" title="wf1" width="640" height="225" />
 
 # Análisis de sentimientos al contenido de artículos científicos
 Este es un ejemplo de cómo aplicar el análisis de sentimientos a artículos científicos. El análisis de sentimiento se aplica a nivel de la oración. Asigna valores a las oraciones positivas y negativas y evalúa la magnitud del sentimiento en referencia con una base de palabras.

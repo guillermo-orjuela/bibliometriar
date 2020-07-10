@@ -19,7 +19,7 @@ setwd("C:/Users/User/Google Drive/Web_pages/example_ecoinnov_290620")
 df <- convert2df("ecoinnov_290620.bib", dbsource="scopus", format="bibtex")
 ```
 
-<img src="C:/Users/User/Google Drive/Web_pages/bibliometria_r_rev-lit/wf_estructuras.png" alt="wf1" title="wf1" width="640" height="225" />
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/wf_estructuras.png" alt="wf1" title="wf1" width="640" height="225" />
 
 ## Estructura intelectual
 La estructura intelectual se refiere a la manera en que están relacionados los documentos que representan la base de conocimiento de un área de investigación. Se compone de las publicaciones fundamentales para llevar a cabo la investigación actual. La estructura intelectual puede subdividirse en estructura social, conceptual y el conocimiento intelectual. A su vez, cada tipo de estructura utiliza diferentes técnicas bibliométricas para representar su estructura. Estas técnicas emplean diferentes unidades de observación dentro de los documentos.
