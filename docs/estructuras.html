@@ -379,12 +379,22 @@ div.tocify {
     </li>
   </ul>
 </li>
-<li>
-  <a href="recursos.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-archive"></span>
      
     Recursos
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="recursos.html">Recursos</a>
+    </li>
+    <li>
+      <a href="rev_lit.html">Rev. Lit. Econ. y gestion</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -520,9 +530,9 @@ cos1 &lt;- networkPlot(cos, n = 20, Title = &quot;Red de co-citación entre revi
 ## 26                    KOBARG S, 2020, IND INNOV 2020   0   0
 ## 27         LIAO Z, 2018, BUS STRATEGY ENVIRON-a   NA  NA  NA
 ## 28   BORSATTO JMLS, 2019, RESOUR CONSERV RECYCL 2019   0   6</code></pre>
-<pre><code>## IGRAPH 0b0433d DN-- 27 48 -- 
+<pre><code>## IGRAPH fe5196b DN-- 27 48 -- 
 ## + attr: name (v/c), id (v/c), size (v/n), years (v/n), color (e/c)
-## + edges from 0b0433d (vertex names):
+## + edges from fe5196b (vertex names):
 ##  [1] XIE X, 2019, J BUS RES                     -&gt;ZHANG M, 2020, IND MARK MANAGE        
 ##  [2] XIE X, 2019, J BUS RES                     -&gt;DI PAOLA N, 2020, EUR J INNOV MANAGE  
 ##  [3] SCARPELLINI S, 2018, J CLEAN PROD          -&gt;MARN-VINUESA LM, 2020, ORGAN ENVIRON  

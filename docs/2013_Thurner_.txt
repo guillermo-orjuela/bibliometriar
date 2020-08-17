@@ -1,0 +1,390 @@
+Business Strategy and the Environment Bus. Strat. Env. 23, 318­332 (2014) Published online 4 October 2013 in Wiley Online Library (wileyonlinelibrary.com) DOI: 10.1002/bse.1787
+Out of the Cold ­ the Rising Importance of Environmental Management in the Corporate
+
+Governance of Russian Oil and Gas Producers
+Thomas Thurner* and Liliana Nikolaevna Proskuryakova
+Higher School of Economics, Laboratory of Economics of Innovation, Misnitzkaya Ul 20, 12000 Moscow, Russian Federation
+ABSTRACT Oil and gas producers play a pivotal role in the Russian economy. The industry itself is very energy consuming and capable of producing major environmental damage. For a long time, however, innovative ways of production were low on their priority list, leading to heavily outdated equipment and hardware. Recently, Russian oil- and gas producers have kicked off major programs to catch up with their western counterparts. Until now, however, insights into the importance of environmental management of oil and gas producers are very limited. We studied the annual reports and environmental reports of the six most prominent industry actors between 2008 and 2010 and analyze their changing approaches to green management. Most companies start in 2009 to address their environmental activities in the statement of the CEO and chairmen. In 2010, the environmental activities have made it up to the list of top priorities in the companies. On an industry-level, we find that management's own initiatives drive companies' adoption of greener production technologies and are much more influential than government regulation. In fact, we see that leading industry actors inform government regulation and thereby lift up the greening of production also in late followers. Green innovation either stems from international cooperation for industry leaders or out of in-house knowledge generated through own R&D institutes. Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment.
+Received 19 April 2012; revised 20 January 2013; accepted 23 January 2013 Keywords: oil- and gas producer; Russian Federation; green management; stakeholder; environmental management; Russia
+Introduction
+E NVIRONMENTAL ISSUES HAVE BECOME INFLUENTIAL TO MANAGEMENT DECISIONS. HOWEVER, THE DEGREES TO WHICH environmental issues influence the strategic management decisions of companies vary widely, and so do the reasons why companies are interested in environmental issues in general. We define green management as `organizational change within corporations and an internationally motivated effort at environmental self-regulation by adopting management practices that integrate the environment into production
+*Correspondence to: Thomas Thurner, Higher School of Economics, Laboratory Economics of Innovation, Institute, Misnitzkaya Ul. 20, 12000 Moscow, Russian Federation. E-mail: tthurner@hse.ru The study was implemented in the framework of the Programme of Fundamental Studies of the Higher School of Economics in 2012.
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+The Rising Importance of Environmental Management
+
+319
+
+decisions identifying opportunities for pollution and waste reductions, and implementing plans to make continuous improvements in production methods and environmental performance' (Khanna and Anton, 2002, p. 539).
+The literature on green management uses a variety of theoretical underpinnings for its arguments (for a history of the field see Etzion, 2007). De Lange (2011) identified that 10% of the contributions she analysed used resourcebased theory, 11% institutional theory and 15% stakeholder theory. Interestingly, however, 32% of the papers used no theory at all and instead are phenomena-driven or practice-orientated (De Lange, 2011). Institutional theory states that organizations aim to build up legitimacy to ensure access to resources they need for survival (Meyer and Rowan, 1977). Organizations will willingly incorporate rationalized myths and adopt appropriate behavior following social norms and beliefs if that would raise their level of legitimacy (DiMaggio and Powell, 1983). Recent contributions using institutional theory include Campbell (2007) or Terlaak (2007). In this line of argument, regulation has often been defined as the main driving force behind the adoption of green policies (Azzone and Noci, 1998; Reinhardt, 1998; Noci and Verganti, 1999). On the other hand, the introduction of new government regulation imposes major threats to a company's production process. Even more so if the environmental regulation is multilateral and requires individual governments to pass national regulations to achieve compliance (Hoffmann et al., 2008). To meet these regulatory uncertainties intrinsic to policy formulation, firms often pursue specific strategies that enable them to cope with this uncertainty (Delmas and Tokat, 2005). For example, Engau and Hoffmann (2009) proved that companies increase their strategic flexibility to avoid areas covered by the new regulation and partly postpone investments (Engau and Hoffmann, 2009). Earlier works have already demonstrated that factors of policy style, like the stringency of their design and implementation, are more decisive for firm decisions than the choice of a single policy instrument (Loiter and Norberg-Bohm, 1999).
+Stakeholder theory sees organizations as an open system in which participants pursue different, sometimes conflicting, goals (Scott, 1992; Donaldson and Preston, 1995). Studies identified consumers as the most important driving force behind the adoption of environmentally friendly strategies (Kleindorfer et al., 2005; Sarkis et al., 2011). Environmentally aware consumers might avoid the firm's products or services in an attempt to punish the company for its unacceptable behavior (Klassen and McLaughlin, 1996; Kassinis and Soteriou, 2003; Yalabik and Fairchild, 2011). Masanet-llodra (2006) analysed a Spanish tile maker and studied how consumer pressure demanded greener ways of producing goods and services. Hearing the voice of consumers allows companies to find new solutions through collaborative engagements with its stakeholders (Svendsen and Laberge, 2006). For example, Loorbach et al. (2010) found empirical support for an ambidextrous management approach, integrating both foresight andbroader stakeholder collaboration. Other studies discussed the influence of alternative groups of stakeholders like investors and employees (Spence, 2009), government and public authorities (Mathis, 2007), activist groups (de Bakker and den Hond, 2008) or secondary stakeholders (Zietsma and Winn, 2007).
+The resource-based view sees organizations succeeding through access to a unique set of resources. These resources comprise productive knowledge and require a social community to learn, reproduce and commercially apply the knowledge. Teece (2007) developed the concept further and introduced dynamic capabilities as core to a company's success in maintaining competitive advantage in a changing business environment. Here, strategic management plays a vital role in adapting, integrating and reconfiguring internal and external organizational skills. Thereby, developing superior knowledge is a pro-active choice for developing future competitive advantages (Russo and Fouts, 1997; Marcus and Anderson, 2006).
+Although earlier research showed the influence of environmental issues on a company's strategic planning processes (Ahmed et al., 1998; Azzone et al., 1997), later research still shows a mismatch between green management and strategic planning (Faulkner et al., 2005; Boiral and Henri, 2012). A company's response to environmental issues depends on its strategic options (Kolk and Pinkse, 2005). Some firms will answer by undertaking small steps throughout their business activities, while others will introduce major adjustments and state-of-the-art technologies in very specific business fields (Rhee and Lee, 2003). Previous literature has identified a number of factors which influence the strategic decisions companies take, like historic environmental performance, industry affiliation, the size of the venture or its geographical location (e.g. Delmas and Toffel, 2004; Weinhofer and Hoffmann, 2010; or Lee, 2012, for corporate carbon strategies).
+The company's size has been seen as vital (North, 1992), suggesting that larger companies will have an advantage in introducing environmentally friendly innovation procedures (Russo and Fouts, 1997). Interestingly, recent
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+320
+
+T. Thurner and L. N. Proskuryakova
+
+research points towards higher positive returns for shares of companies with advanced green management and reporting procedures.
+Other authors are more cautious (e.g. Palmer and Oates, 1995; King and Lenox, 2002; Hoffman and Bazerman, 2005; Pagell and Wu, 2009), seeing environmentally friendly behavior as not always compatible with the profitseeking behavior of the firm. Some authors took an even more critical stance and described the greening of production as a strategic management objective to be a rational myth (e.g. Peattie and Crane, 2005; Boiral, 2007). Companies which identify environmental issues as a myth will restrict their action to compliance with regulations and the avoidance of costly penalties. Companies pursuing the opportunities associated with better environmental management will proactively pursue competitive advantages through the application of environmental innovations.
+Interestingly, there are only few case studies about how and why industries are actually adopting green production strategies. Trowbridge (2001) studied a chip manufacturer and identified internal and external drivers towards greener ways of production. Internal drivers consist of the company's willingness to improve risk management due to potential interruptions in the supply chain, and collaboration with suppliers to find alternative materials and equipment that minimize environmental impacts.
+The importance of oil and gas production for the Russian economy can hardly be overstated. Over a quarter of the country's GDP is generated from its commodities, mostly oil and gas. The industry itself is very energy-consuming, is capable of producing a lot of environmental damage and is considered as a highly risky source of several types of different pollutants. Still, insights into the importance of environmental management of oil and gas producers are very limited. Helfat (1997) demonstrated that during the oil price shocks in the 1970s, the oil industry developed alternative strategies through the combination of new research and development (R&D) and old and new assets. Notably, Magrini and dos Santos Lins (2007) studied the integration between environmental management and strategic planning in the case of PetroBras. They identify an environmental incident which led to a rethinking of environmental management within the company. For Russian oil and gas producers, no such incident has been reported. For a long time, however, innovative ways of production were low on the priority list, leading to heavily outdated equipment and hardware. In recent years, Russian oil and gas producers have largely caught up with their western counterparts, though there still is a way to go.
+Although official statistical data on green innovation by sector are unavailable, we looked into the data on technological innovations, which serves as proxy for the extractive industries sector. From 2003 to 2009 Russian companies increased their expenditure on technological innovations more than threefold in absolute terms, while companies in the mining sector increased these expenditures nearly tenfold (see Table 1). In 2009, during a period of economic uncertainty, Russian oil and gas companies maintained their expenditure on environmental protection, bypass gas utilization, personnel and technological safety at a stable and unchanged level. In 2010, there was a 27% increase in these expenditures (Lazko, 2011).
+We therefore set out to study changing attitudes towards green production and cleaner production mechanisms in the Russian oil and gas industry. We aim to understand the driving forces that move environmental management up the ladder of companies' strategic priorities. These insights are vital for the comparison of different innovation paths and to compare different modes of innovation in green technology. Secondly, by studying the most important industry of a nation, we are also able to identify how individual actors change the industry and how societal systems operate. To date, the literature on such co-evolution between business mechanisms and societal systems remains underdeveloped (see, for example, Korhonen and Seager, 2008; Loorbach et al., 2010). Such interdependences, though, are key in understanding how the changing mechanisms of the industry standards by individual companies
+
+2003 2004 2005 2006 2007 2008 2009
+
+Total for the economy
+
+105444.7 122850.5 125678.2 188492.2 207499.2 276262.3 358861.1
+
+Mining operations
+
+8539.4 12931.4 6852.5 26854.2 28062.2 31248.9 89788.0
+
+Extraction of fuel and energy natural resources
+
+7383.6 11171.0 4584.5 24453.8 23726.7 26381.3 87500.8
+
+Extraction of natural resources, other than fuel and energy 1155.8 1760.4 2268.0 2400.4 4335.5 4867.6 2287.3
+
+Table 1. Russian organizations' expenditure on technological innovations in mining operations, 2003­09 (million RUB) Source: Russian Federal Service of State Statistics, http://www.gks.ru
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+The Rising Importance of Environmental Management
+
+321
+
+or the behavior of individual companies through industry peers actually happens. This paper attempts to shed more light onto this relationship. Identifying the driving forces behind going green will also help us to better reflect on policies and understand how they will influence the behavior of companies.
+
+Methodology
+
+Our study contributes to understanding why the individual actors in the industry adopt environmental management. To understand what triggers these processes, we studied six of the most important Russian oil and gas producers (see Table 2). Based on the size of the companies and given the large number of companies in the industry our results are representative for the Russian oil and gas industry.
+The data about the companies were extracted from their annual reports and environmental reports from the years 2008, 2009 and 2010. Annual reports are extensive pieces of work, ranging up to 300 pages. Besides the necessary elements like balance sheets, profit and loss statements, cash-flow statements and notes to explain the rationale underlying the numbers, annual reports contain large sections of descriptive prose containing information about the company's activities. This is in line with Bowman (1984), who in his works about the food processing industry, the computer peripheral industry and the container industry based on content analysis of annual reports pointed out the particular importance of annual reports for studying and understanding corporate strategy: `Annual reports do have the advantage of unobtrusive measurement in that they are written for purposes and to audiences different from the content analysts.... Although some people maintain that the prose in annual reports is written by public relations people, the truth is that the typical chief executive officer spends considerable time outlining the contents of the report, sketching out much of it, and proofreading and changing most if it to his taste' (Bowman, 1984). Meanwhile, environmental reports have been seen as a rich source of information about green management activities for all kinds of analyses for oil and gas producers as well. Kolk et al. (2001), for example, conclude that petroleum-refining companies pay particular attention to climate change in their reporting and produce an extraordinarily high number of verified environmental reports. To standardize these reports, the International Petroleum Industry Environmental Conservation Association (IPIECA) and the American Petroleum Institute (API) issued the Oil and Gas Industry Guidance on Voluntary Sustainability Reporting in 2005. In the same year, KPMG ranked oil and gas as a leading sector in social and environmental reporting (KPMG, 2005).
+We also analyzed the companies' environmental and sustainable development reports for the year 2010 (with the exception of Tatneft, which did not produce one in 2010), which ranged from 31 to 173 pages. Such differences in the quantity and quality of disclosure have been previously identified in other geographical areas (see Dong and Burritt, 2010, for the Australian Oil and Gas Industry).
+Content analysis is most commonly used to assess the environmental disclosure. The method consists of codifying the text into various groups or categories, depending on selected criteria (Weber, 1988). Contemporary
+
+Ranking by indicator
+
+Company
+
+1
+
+Gazprom
+
+2
+
+Lukoil
+
+3
+
+Rosneft
+
+4
+
+TNK-BP International
+
+5
+
+Russian Railways
+
+6
+
+Transneft
+
+7
+
+Surgutneftegas
+
+8
+
+Norilsky Nickel
+
+9
+
+Tatneft
+
+10
+
+Megafon
+
+Table 2. The 10 largest Russian companies by net profit, 2010. Source: http://www.finansmag.ru/96286
+
+Net profit in 2009 (billion RUB)
+779.585 222.411 206.644 157.759 150.001 120.407 113.874 82.480
+55.532 45.289
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+322
+
+T. Thurner and L. N. Proskuryakova
+
+studies based on content analysis are focused on concepts rather than simply words, and on semantic relationships rather than just their presence (de Sola Pool, 1959). The goal is to identify replicable and valid inferences from data according to context (Krippendorff, 1980). For our analysis, for concepts like `innovation' and `modernization' and the respective keywords, only the number of occurrences was counted. For more complex concepts like `government influence' or `corporate governance' we applied relational analysis and took the relationship with other keywords into consideration. We checked the validity of data extracted from the companies' reports through available official statistical data for the mining sector, including the extraction of fuel and energy resources (as per the Russian statistical classification), as well as results of opinion polls of top management from the oil and gas sector.
+Studying the biggest players of one consolidated industry allows us, on one hand, to investigate `a contemporary phenomenon within its real-life context' (Yin, 1994, p 13) and to evaluate claims about causal processes (George and McKeown, 1985). On the other hand, unstructured and subjective conclusion-finding processes have exposed purely qualitative case study analyses to a lot of critique. Many case study-based analyses have come under scrutiny for tooloose an application. And indeed, there are weaknesses to this approach. We are aware of these difficulties and keep a critical stance towards our material and the conclusions we reach throughout our study.
+We start our analysis of the companies' annual reports by looking into the statements by the CEO and the chairman, which constitute a summary of what happened over the past year and how the company intends to do business in the future. We compared the texts over time to identify a shift towards environmental management in the CEO/directors' statements. Subsequently, based on published research we identified the key drivers that make companies `go green' and selected those that are applicable to the Russian extractive industry. These drivers were attributed keywords that we counted in the 2010 annual and environmental reports of the six selected companies to explain why the company identified environmental management as important. To quantify how important a driver is for each company we identified key words for these drivers and applied word counts in the annual and environmental/sustainable development reports for the year 2010. In addition to drivers for `going green' we counted keywords that reflect the overall preferred method for introducing changes, especially those of technological nature. We looked into the reports to see whether companies attempt to modernize their equipment or if their focus rests on innovation.
+To understand how the drivers are affecting company behavior on an industry level, we ranked the importance of the drivers of each company and aggregated them. This allowed us to gain a good understanding of the relative importance of factors influencing environmental management in Russian oil and gas producers.
+
+Analysis
+
+Following the research already undertaken on the topic (e.g. Diabat and Govindan, 2011; Faucheux and Nicolaï, 2011; Azzone et al. 1997; Azzone and Noci, 1998; Del Brío and Junquera, 2003), as well as own analysis below, we identify the drivers applicable to the Russian extractive industry sector (see Table 3 below).
+The debate in recent years has revealed the importance of paying attention to environmental protection and companies' responsiveness to this challenge. Thereby, our understanding of strategy was revisited ­ away from `empty field' thinking towards interpreting a company's activity within its very own environment; that is ­ first and foremost ­ within its industry.(Figure 1)
+To track these drivers in companies' annual reports and reports on environmental protection/sustainable development, we broke down the changes in the institutional environment as identified above into keywords and calculated occurrences, taking into account, for certain words, the relational links (Figure 2). In line with Frondel et al. (2008), we distinguish between public regulators like government agencies, internal forces like management initiatives, customers and the company's international orientation. For the sake of consistency and in order to avoid duplication of the same driver reference by companies in several annual reports, we completed this exercise for annual and environmental reports only for the year 2010. Concepts that are reflected by keywords that have a single meaning ­`modernization', `innovation', `international', `law/legislation' and `consumers' were easily tracked throughout the text. For other concepts expressed in keywords, which have more than one meaning or are context-specific ­ `corporate governance', `government', `safety' and `savings' ­ we considered the context. Under
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+The Rising Importance of Environmental Management
+
+Government and regulation International orientation Consumers Own management Innovation Modernization
+Table 3. Identifying the drivers
+
+Gazprom
+2 1 0 3 1 0
+
+Lukoil
+2 1 0 3 1 1
+
+Rosneft
+3 1 0 2 1 0
+
+Surgutneftegas
+3 2 0 1 0 1
+
+TNK-BP
+1 2 0 3 1 0
+
+323
+Tatneft
+2 1 0 3 1 0
+
+Figure 1. Structure of the analysis
+
+Figure 2. Drivers of environmental management and keywords
+
+`corporate governance' we covered various aspects: human resources management, environment management, quality assurance, etc. We also include the variable of international exposure to the list.
+To understand how these changes in production mechanisms are happening and which option has been prioritized by management we differentiate between innovation and modernization. The presumption here is that modernization would be one indication to testify towards companies' dependence on a technological path. Innovation, in this regard, would indicate that a company is using new technology which has previously not been applied. Also, we are interested if our companies state reasons for trying to avoid certain procedures, for example resource (cost) savings or activities to meet the company's safety concerns.
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+324
+
+T. Thurner and L. N. Proskuryakova
+
+Description of the Cases
+We will now discuss the companies and their changing attitudes towards environmental management as indicated in their annual reports. Our focus rests on statements by the top management. Also, we describe the company's environmental management systems where applicable.
+
+Surgutneftegas
+The oil and gas producer Surgutneftegas is one of the largest companies in the Russian oil sector. It accounts for almost 13% of the country's crude output and 25% of gas produced by domestic oil companies. Their shares are traded in Moscow. American depository receipts of Surgutneftegas are traded at a number of trading places. Surgutneftegas leads the industry in terms of geological exploration, covering over 30% of prospecting and exploration drilling in Russia. The company exports to Europe and the Commonwealth of Independent States.
+In the 2008 annual report, the chief executive officer (CEO) confirmed that `the company bets on the use of modern equipment and advanced technologies, support to forward-looking solutions and innovations'. In 2009, the company's priorities shifted to green innovation. As stated by the CEO in the 2009 environmental report, `the accent is on development and usage of new environmentally friendly technologies and equipment, which is the result of innovation activity of Surgutneftegas in the sphere of environment protection'. In 2010, the CEO's statement in the annual report stated that `investments in environment protection activity amounted RUB 20 bln', which resulted in high output indicators, such as `96% use of associated gas, which is the highest indicator value across the industry'.
+The company's main green activities were outlined under the program `Environment 2007­2009', developed in 2006. The program covered construction of nature protection facilities; protection, rational use and rehabilitation of soils; protection of atmospheric air; protection of water resources; monitoring environments and production sites; damage control and liquidation of any aftermath at pipelines; deactivation and processing of production wastes; environmental education and R&D. Its initial volume of funding was RUB 32.2 billion; however the funding was continuously increased: in 2007 to RUB 41.632 billion and in 2008 to RUB 53.356 billion. The actual volume of funding reached RUB 58.348 billion. The increase was mainly triggered by the opening of new sites and the construction of new environmental facilities in western Siberia. The company also stressed the efficiency enhancement from their green activities. For example, the `company's prevented damage due to implementation of nature protection activities in 2007­2009 was assessed at the level of RUB 8625 mln'. The annual reports mention over 3000 in-house innovators, whose inventions allowed for the introduction of 2453 innovative proposals with an economic effect of RUB 627 million (in 2009). Besides in-house innovators, the corporate R&D system is based on two large research institutes: the Surgut research and project institute `SurgutNIPIneft' with a branch in Tyumen and the Institute for Design of Enterprises on Oil Processing and Petrochemical Industry `Lengiproneftekhim' in St Petersburg.
+
+Tatneft
+Tatneft is the smallest company in the sample. It mainly operates in the Russian Federation and is based in the Republic of Tatarstan. In 2009, the CEO addressed environmental issues for the first time: `Formation of a block of oil service companies, united by a joint production cycle and uniform environmental protection standards, ... also continued in 2009'. In 2010, the company listed its strategic initiatives and tasks and included `Provision of the high level corporate social and environmental responsibility' as the last point.
+The first comprehensive program on energy saving and green technology was implemented in 2000­10 and covered all dimensions of activity by technological process and by type of resources. In 2011 Tatneft launched a new 10-year program `Energy and Resource Efficiency', the goals of which are harmonized with the requirements of the federal law on energy saving. Unlike previous programs, which were oriented only towards economical use of energy, the present program pays attention not only to energy resources but also
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+The Rising Importance of Environmental Management
+
+325
+
+to economy of natural, material and labor resources: `Priority is given to activities on application of innovative technologies in the sphere of energy saving, including alternative sources'. In the 2010 annual report the company calculated its economic benefit from green innovation: `Analysis of innovative oil extraction by the company shows that introduction of modern methods increases oil output, while a 1% increase of oil extraction coefficient at developed sites provides for additional 50 mln tons of extracted resources'. The program implementation in 2010 allowed the saving of over 425,000 tons of fuel equivalent.
+Many innovations were developed by the c ompany's three research units ­ the institutes `TatNIPIneft', `TatBIIneftemash' and specialists of the `TNG-Group' company (previously JSC `Tatneftegeophisica'). The company also cooperates with external research organizations. In 2008 `Tatneft' started to actively develop its activity outside the Republic of Tatarstan ­ in the Samara, Orenburg, Ul'yanovsk regions, the republic of Kalmykia and the Nenetsk autonomous region. A number of projects are led by Tatneft in other countries.
+
+TNK-BP
+TNK-BP ranks among the world's top 10 privately owned oil companies in terms of crude oil production. Founded in 2003 as a result of the merger of BP's Russian oil and gas assets and the oil and gas assets of the Alfa, Access/Renova group, both parties hold 50% in the joint venture. In his address to the 2008 sustainable development report, the TNK-BP CEO stated three of the company's targets, of which being environmental friendly and safe is one. In the environmental area, `despite the crisis, the company's investment plans and obligations remain the same'. In 2009 TNK-BP was the first among major big oil and gas companies in Russia to disclose information about the volumes of greenhouse gas emissions in line with international reporting standards. In the 2009 sustainable development report, the TNK-BP CEO outlined the new corporate strategy and the company's main goal, which `is to be the leader in environmental and industrial safety'. In 2010, the statement of the CEO included the following remark: `environmental stewardship, the development of human capital and social responsibility remain key priorities for TNK-BP. In 2010, we continued to implement a range of measures designed to ensure the safety of our people and protect the environment. This has resulted in a substantial reduction in the number of lost-time accidents and oil spills'.
+The company's sustainable development reports strongly focus on efficiency gains, mostly lower greenhouse gas emissions. TNK-BP has a program for soil re-cultivation (contaminated in the course of previous activity), undertakes energy efficiency activities for all aspects of operations (among the results is the increased use of secondary water by 34% over 5 years), modernizes the pipeline system (3545 km of pipelines were changed over 2004­09) and implements environmental education programs for staff and sub-contractors. The 2009 sustainable development report features the saving of USD 21 million due to energy efficiency activities.
+In the 2010 annual report the CEO announced that `K- considerably increased investments in development and application of innovations, which was possible due to favorable macroeconomic climate, stimulating attraction of new technologies to Russia' (p. 3). TNK-BP develops many of their core competencies in cooperation with the holding company. For example, in 2010 the company accessed international markets through acquiring BP assets in Vietnam (gas and energy assets) and Venezuela.
+TNK-BP interacts with the government on matters concerning environmental regulation. In 2008 the company put forward a few suggestions for economic stimuli for oil and gas companies that could be enacted by the state. In March 2010 the President of the Russian Federation appointed an executive director of TNK-BP, Mr V. Vekselberg, to serve as the president of the not-for-profit organization `Foundation for Development of the Center for Research and Commercializing of New Technologies' (the `Skolkovo Foundation').
+
+Rosneft
+Rosneft is the leader of Russia's petroleum industry. Its shares are only traded in Russia. Global Depositary receipts are traded in London. Rosneft's exports to Asia are growing fast, while its engagement with Europe is losing ground. During the time of observation, Rosneft broadened its strategic focus on a large scale. In
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+326
+
+T. Thurner and L. N. Proskuryakova
+
+2008 Rosneft's aim was to sell as many of its products as possible directly to the end-user through expansion and modernization of its network of service stations. In 2010, however, the CEO of Rosneft stated that the aim was `to transform Rosneft from a national player, applying traditional technologies at traditional oilfields, into an international oil and gas leader with a diversified field portfolio including shelf reserves, and applying the latest technologies, including many of our own invention'.
+In the address of the CEO and the chairman in 2008 the topic of environmental protection remained untouched. Also in 2009, when the company identified the global financial crisis as their main concern, only an aside addressed the environmental issue: `We will continue to work efficiently in the future for the good of the country and of our shareholders, adhering to the highest business standards with respect to production, the environment and society'. In 2010, however, the CEO announced that `Energy and fuel savings in 2010 thanks to our efficiency program were over 350,000 tonnes of conditional fuel, or 4% of total consumption. Progress in reducing fuel and energy use in production is continuously monitored'.
+To improve their technological base, Rosneft uses its own corporate research and development center which since 2006 has mobilized specialists from inside and outside Russia to facilitate work on top priority projects. By 2008, the company stated `continuous implementation of new industrial technologies to raise production volumes, increase reserves, cut costs, and ensure that the competence of Company specialists matches the best international standards' as the primary objective of their innovation activities.
+The focus on the latest technological development became clearer in 2009: `In every aspect of its environmental operations, Rosneft collaborates closely with specialized organizations which also make use of the latest technologies and equipment'. Also in 2009, the company introduced its targeted environmental program for 2009­14, in which the company `... gives special priority in environmental protection to preventive measures aimed at minimizing negative impacts on the environment. It involves modernization of the Company's environmental facilities and equipment, including construction and reconstruction of work areas; provision of Company subsidiaries with modern technology and equipment for recycling of oil sludge and dealing with oil spillages; and construction of new and reconstruction of old purification facilities'.
+The company announced a cooperation with Exxon Mobil for off-shore exploration in 2011. In 2010, Rosneft enlarged this section and reported in more detail on how the system of adaptation and application of technologies works. `Rosneft spent RUB 3 bln in 2010 (including VAT) on development of new technologies, drawing upon the potential of Russian high-tech companies and academic research. The spending level was 1.5 times higher than in 2009'. Rosneft runs pilot projects under the supervision of the corporate research and development center which bring together specialists from company departments, subsidiaries and corporate R&D and design institutes, as well as other Russian and foreign experts. In 2009, the company first identified the `consistent reduction of air pollutant emissions' as one of its top priorities: `As part of this work, Rosneft has been implementing a wide range of measures, including: construction and overhaul of gas pipelines; adjustment of burner units, boilers, furnaces and fuel equipment; installation of pontoons and gas handling systems at tanks and use of light reflecting paints; and constant monitoring of air quality and inventory of emission sources'. The year 2009 saw the opening of one of the major projects for Rosneft, namely the Vankar field in eastern Sibiria. The company devoted a large part of their annual report to how this project would be in line with high standards of environmental protection:
+
+Protecting the unique natural environment of Krasnoyarsk Territory is of great concern to Rosneft, and the Company therefore has comprehensive measures in place for ecological protection at the Vankor field. All storage facilities and buildings as well as the pipeline are equipped with special systems for thermal stabilization of the ground which prevents the ground from thawing. This technology is being used for the first time in Russia and has never been used before on such a large scale anywhere in the world. ... Vankor is remarkable for its commitment to 100% detoxification of waste generated in the process of field development and operation. Disposal of drilling waste is carried out using reverse pumping of drill cuttings (ground and mixed into a pulp) into selected strata. The field also has its own incineration area (the incineration unit has a capacity of 100 kg per hour).
+
+The detailed information continues on aspects like re-utilization of unused petroleum gas in the production field. It also describes the closed flaring system for safe burning of gas which suppresses 99.9% of gaseous carcinogenic substances.
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+The Rising Importance of Environmental Management
+
+327
+
+Gazprom
+Gazprom sees itself as a global energy company. The state holds a 50% controlling stake. The company's shares are traded in Moscow, Frankfurt and London. Gazprom is strongly focused on the European market.
+The description of Gazprom's activities towards green production in the letter of the CEO is quite general and stresses its compliance with international and national environmental legislation: `In 2008, Gazprom Group continued environmentally focused development of its production facilities as it reconstructed old ones and commissioned new ones using advanced technological and technical solutions, including those devised by Gazprom's research centers'. The letter in 2009 was largely dominated by the difficulties the company faced in overcoming the financial crisis and the resulting slump in commodity prices. Parts of the major challenges came from the `increased volatility of currency exchange rates, and failure to fulfill the plans to borrow funds in 2009'. In describing future strategy, the CEO speaks about the competitive advantages of natural gas over other sources of energy and argues for its limited environmental impact: `Using natural gas in the electric power industry leads to a decrease in CO2 emissions and other hazardous emissions, compared to other types of fossil sources of energy. It ensures higher efficiency, and allows for lower initial capital investment and lower implementation and payback periods for investment projects'. The address in 2010 focused on the aftermath and recovery of the company and its attempts to increase shareholder value. The year 2010 saw the first Russian liquefied natural gas (LNG) production plant, brought to design capacity in autumn 2010 by Gazprom. The development of LNG was the focal point for innovation activities in the same year. Gazprom applies mechanisms and procedures to manage its innovation activities: `One of the major components of such mechanism is the venture funding infrastructure for innovation projects, with the venture fund acting as its core element' (2008). One of the key efforts in 2008 was `providing for the cost-effective development of fields located in the new gas producing regions (the Obskaya and Tazovskaya bays, the Yamal Peninsula, the shelf in the Barents and Kara seas, eastern Siberia, and the Far East of Russia) with severe climatic and complex geological conditions'. A key element for innovation management is the ongoing cooperation with `leading academic and research institutes and centers as well as domestic and foreign companies, animating development of the country's scientific potential'. Also, as stated in 2010, a main source of technological advancement stems from its import substitution policy.
+In 2010, Gazprom reported their environmental activities in more detail:
+Increased attention is paid to preventive environmental actions; JSC Gazprom's Environmental Inspectorate was established at a corporate level, and all project-related materials undergo JSC Gazprom's environmental expert review before being submitted for their state expert review. Internal environmental audits were performed at six JSC Gazprom's subsidiaries in 2010 and training was provided to 1,407 specialists employed by JSC Gazprom and its subsidiaries under the environmental management system program. As part of the implementation of the environmental management system, JSC Gazprom adopted the corporate environmental goals. The corporate climate policy follows provisions of the Russian Energy Strategy for the period until 2030 and the Environmental Doctrine of the Russian Federation, which require that Gazprom should take all possible measures to preserve the Earth's climate.
+Crucial components of the system are the corporate environmental policy and the database of regulatory documents and standards related to environment protection, efficient use of natural resources, and energy saving. In 2009 and 2010, government inspections were carried out and did not reveal any significant violations of Russian environmental legislation.
+
+Lukoil
+Lukoil is the largest privately owned oil and gas company in the world by proved oil reserves. The company runs its own network of fuel stations throughout Russia and in other countries. The address of the CEO/president in 2008 concerned its environmental safety program: `Lukoil completed the implementation of the Environmental Safety Program at LUKOIL Group organizations for 2004­2008. More than USD 1.2 bln was spent on Program implementation in the course of five years'. The address in 2009 reduced its section dedicated to environmental issues to `the company is always aware of its responsibility for protecting the environment and public health'. In
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+328
+
+T. Thurner and L. N. Proskuryakova
+
+2010 the address is focused on the successful reemergence of the company out of the financial crisis. Not a single sentence addressed environmental issues.
+At the end of 2008 and start of 2009 the company drafted a new environmental safety program for 2009­13: `Priority aims of the program are: further recycling of accumulated and newly generated waste, raising the level of utilization of associated gas to 95% by 2012, implementing the mechanisms of the Kyoto Protocol, and ensuring that the group environmental impact indicators comply with requirements of national and international legislation'. The follow-up program for Lukoil Group organizations in 2009­13 was approved in April 2009: `The new program includes 483 measures with overall cost of USD 1.8 bln'. Organizations in the Lukoil Group spent about USD 420 million in 2009 on measures to ensure environmental safety (spending in 2008 was over USD 700 million). In 2009 the company prepared an inventory of greenhouse gas emissions by the Lukoil Group and set up a portfolio of carbon projects:
+Most specific company indices for impact on the environment in 2009 were unchanged or better than in 2008 and still remain considerably better than the average for the oil and gas sector in the Russian Federation. There were substantial reductions in volume of atmospheric emissions (by 8%), polluted water discharge (by more than 20%), and volumes of accumulated waste (by 4%). However, certain indicators worsened to some extent in 2009. In particular, there was an increase in the number of incidents with environmental impact, explained by greater frequency of pipeline incidents due to corrosion and ageing of pipeline systems and also by the fact that liquids, transported through pipelines, became more corrosive due to increase of the water cut in extracted crude.
+The group continued to work closely in 2010 with the Russian Corporation of Nanotechnologies (RUSNANO) on commercialization of nanotechnologies and their application in the oil and gas industry; a strategy started in 2009. Interestingly, in 2010 there was an additional chapter on Lukoil's experience with national regulators:
+Implementation of environment policy by the Company is significantly hampered by inadequacy of environmental legislation, which is subject to frequent changes and various interpretations. The Company's environmental services and subsidiaries spend much time studying changes in the law, adapting their activity to new legal requirements, and preparing proposals for improvements to current legislation.
+One of its mentioned achievements was `a nearly twofold reduction of foul water discharge in 2010 thanks to more efficient operation of purification equipment'.
+
+Identifying the Drivers for the Greening of Production
+
+After describing the priorities of the management as stated in the companies' annual reports, we set out to quantify the intensity of the different driving forces for each company (Table 3). This step is of particular interest as it has the power to distinguish between different degrees of importance of each driver within individual companies. We calculated the number of occurrences of keywords to see how important selected concepts are for the companies as per their environmental and annual reports for 2010. We awarded three points for the drivers mentioned most frequently, two points for the second most frequently mentioned drivers, one for the third and none for the least mentioned.
+We also looked at the organizational structure of environmental activities for the companies under study. Gazprom has its own coordinating committee of JSC Gazprom on environmental protection and energy efficiency, headed by the deputy chair of the board. Rosneft operates its own department for environmental and industrial safety under the Rosneft vice-president responsible for production. TNK-BP has a committee of the board of directors on labor, industrial safety and environmental protection, while Surgutneftegas has its own department concerned with environmental matters and natural resource use. Lukoil operates its environmental innovation activities under their S&T advisory board. Tatneft did not mention anything about how their environmental activities are included.
+Gazprom most frequently cited its own management initiatives as the main reasons for environmental development, followed by regulation and international customers. This also corresponds to its management
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+The Rising Importance of Environmental Management
+
+329
+
+structure, with environmental concerns on the task list of the deputy chair of the board. Gazprom identified improvements to safety concerns, followed by potential savings through the application of green production methods. The greening of production is largely happening through innovation. In Lukoil too, corporate governance is seen as a main driver, followed by concerns of `international orientation' and `government regulation'. Again here, `safety' is a big concern for the greening of production. Lukoil mentions `innovation' and `modernization' with the same importance. Rosneft identifies `own management' interest as the main driver, followed by government and `international orientation'. Also in this case, safety is given prominence over savings. Innovation is the preferred way of achieving the greening of production. TNK-BP, the joint venture, identifies its own management concerns again over `international orientation' and `government regulation'. Safety ranks as the biggest concern, way over saving potentials. Innovation is the preferred way to reach the greening of production. Surgutneftegas ranks `government' on top, followed by `management concerns' and international consumers. Although again here safety ranks first, modernization is mentioned way more often than innovation. Interestingly, Tatneft also identifies `corporate governance' as the main driver, followed by `international orientation' and `government regulation'. Safety concerns rank over savings; modernization and innovation have the same importance.
+
+Aggregating the Findings on an Industry Level
+We rank the occurrences of the three drivers, government regulation, management activities and international orientation in each company and aggregate the values to give a picture for the industry as a whole (see Table 4).
+The ranking of importance of drivers identifies own management concerns as the top driver for the greening of production. This is an interesting finding, taking into account that the industry is strongly regulated and many companies are under the direct influence of the government. It is, of course, possible that government influences the decision making in the companies it owns through direct communication with its management. However, the strong level of specialization of the board members in these companies actually speaks against such a direct influence. Management is strongly concerned with safety. All companies in our sample rank concerns regarding the safety of the environment and its staff as more important than searching for efficiency gains, pointing towards a more defensive strategy.
+Moreover, consumers are very rarely mentioned in companies' reports, even in reports of the companies with retail businesses like petrol stations. This signifies that consumers as drivers of greener production have low importance for the large companies under review.
+The majority of the oil and gas producers use innovation as the means to improve their production methods. Only two companies see the modernization of their existing production equipment as sufficient. We explain this focus on innovation through the unique geographic and climatic conditions of Russia that requires individual solutions over standardized market solutions.
+
+Conclusion
+To our knowledge this paper is the first study of Russian oil and gas producers and their efforts to green their production. Our paper is based on a content analysis of the companies' annual reports, and we triangulated the data through available statistical data and results of opinion polls of oil and gas sector CEOs. Based on the companies' changing priorities as indicated by the CEO and chairmen's addresses to the shareholders over the years 2008­10, we found strong variations in the priority setting of green production processes across the companies. Most companies started
+
+Government
+
+Own management
+
+Industry-wide driving forces
+
+11
+
+17
+
+Table 4. Aggregating the findings on an industry level
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+International orientation 8
+
+Customers 3
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+330
+
+T. Thurner and L. N. Proskuryakova
+
+to address their environmental activities in the statements of the CEOs and chairmen in 2009. By 2010, the environmental activities had made it up to the list of top priorities. Also in 2010, most companies expressed their initiatives though monetary commitments in this sphere and published respective sets of indicators. The coverage of these indicators and their comparability varies greatly from company to company.
+In a second step we quantified the importance of drivers by calculating their occurrences in the companies' annual and environmental reports. Interestingly, in an industry heavily controlled and regulated by the government, it is the managements' own initiatives that are the main driver for the companies in the adoption of greener production technologies. We also find that companies avoid any safety-related incidences, ranking safety higher than improving efficiency. This is probably due to rich resources and limited competition in the domestic market so that a focus on efficiency is only of secondary importance.
+We explain these findings through the international orientation of most companies in our sample and their presence in foreign consumer and capital markets. The hypothesis that these improvements are caused by advancing overall corporate governance, including internal communication, openness and transparency, dialogue with stakeholders and stimulating initiatives of employees, may not be sustained. There are few references if any to the mentioned corporate governance components and the concept of `corporate governance' is often placed in the context of `vertical management', well known in the Russian state governance system.
+Although government influence is a vital factor, `government' is often referred to in relation to foreign governments and foreign state companies. `Government' is also referred to as a regulator (including foreign governments) and shareholder (solely the Russian government), its representatives being present in the companies' boards. Despite Russia's reluctance to sign international agreements like the Kyoto Protocol, multilateral agreements do play a vital role. A few companies in our sample (e.g. TNK-BP) underline in their reports that they attempt to actively influence environmental legislation and regulations.
+For most companies in our sample, innovation is the prevailing concept compared with modernization towards the achievement of their overall goals, including the stated goals to achieve greener production. We identified two different approaches to green innovation by the companies. The first used in-house knowledge to develop related processes and technologies. These companies made use of the knowledge of their own employees and entrusted their own R&D institutes with research projects, including independent local research. Many of these companies did identify environmental goals as part of their strategy, but did not pursue a strategy to become international leaders.
+The second group of companies consists of companies which actively engage in open innovation programs with strong international partners. Rosneft, for example, claimed to become a leading global player in 2010. Previous to their announcement of a partnership with Exxon Mobil, they already had mechanisms in place to bringing in experts from all over the world to improve their knowledge base. Interestingly, the two big players, Rosneft and Gazprom, used corporate venture capital funds to buy in expertise in new technologies.
+Our paper has a number of implications for the international readership. Firstly, we showed that the most proactive companies in the Russian oil and gas sector are leading firms at an international level. They don't compare against local rivals, but rather compete against other international top-players. Thereby, these companies get in touch with the latest technologies and subject themselves to meeting internationally prevailing expectations (for example voluntary reporting done by other oil and gas producers listed on the same stock exchange). Also, collaborations with partners from outside Russia will depend on the pursuit of minimum standards. Surely an international partner would not take the risk of being mentioned in conjunction with, for example, a potential major oil spill by a Russian company. Therefore, those Russian oil and gas producers which are active on an international level will have a whole array of incentives to lift their game and to comply with state-of-the-art green management techniques and also set their priorities accordingly.
+This influx of new thinking and high standards does not end there. In fact, our cases have shown that those industry leaders inform government about their environmental targets. This step is rather easy in Russia as the government is a shareholder in these companies. Consequently, the targeted and achieved performance becomes industry standard, enforced by law and industry regulation. Policy makers will have to take the situation of less advanced companies into account to ensure that they are actually able to comply.
+We find this feedback mechanism highly interesting and call for further contributions. Research work could interpret green management as a technology, which is transferred through many different mechanisms. Therefore, green management techniques and performance targets could well be studied in the context of technology transfer.
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+The Rising Importance of Environmental Management
+
+331
+
+Oil and gas is probably the most important industry for Russia. Therefore, this industry has huge importance already, and policy makers and other industries watch their activities closely. The revenues are of vital importance for Russia, and government officials are in constant exchange of ideas with top management of these companies. It can therefore only be beneficial to foster further collaborations with technology leaders throughout the world and ­as a quasi side-effect ­ import better standards and regulations. It would be interesting to see if leading industries from other nations play the same role in importing and distributing green production standards and regulations in the absence of such close economic ties.
+
+References
+Ahmed NU, Montagno RV, Firenze RJ. 1998. Organizational performance and environmental consciousness: an empirical study. Management Decision 36(2): 57­62.
+Azzone G, Bertelè U, Noci G. 1997. At last we are creating environmental strategies which work. Long Range Planning 30(4): 562­71. Azzone G, Noci G. 1998. Seeing ecology and `green' innovations as a source of chance. Journal of Organizational Change Management 11: 94­111. de Bakker FGA, den Hond F. 2008. Activists' infl uence tactics and corporate policies. Business Communication Quarterly March: 107­110. Boiral O. 2007. Corporate Greening Through ISO 14001: A Rational Myth? Organization Science 18: 127­146. Boiral O, Henri J-F. 2012. Modelling the impact of ISO 14001 on environmental performance: A comparative approach. Journal of Environmental
+Management 99: 84­97. Bowman, EH1984. Content Analysis of Annual Reports for Corporate Strategy and Risk. Interfaces 14: 61­71. Campbell JL. 2007. Why Would Corporations Behave in Socially Responsible Ways? An Institutional Theory of Corporate Social Responsibility.
+The Academy of Management Review 32: 946­967. De Lange DE. 2011. Research Companion to Green International Management Studies: A Guide for Future Research. Collaboration and Review
+Writing. Edward Elgar Publishing. De Sola Pool I. 1959. Trends in Content Analysis. Urbana: Illinois. Del Brío JA, Junquera B. 2003. A review of the literature on environmental innovation management in SMEs: implications for public policies.
+Technovation 23: 939­948. Delmas M, Toffel MW. 2004. Stakeholder and environmental management practices: an institutional framework. Business Strategy and the
+Environment 13: 209­222. Delmas M, Tokat Y. 2005. Deregulation, governance structures, and efficiency: the U.S. electric utility sector. Strategic Management Journal 26: 441­460. Diabat A, Govindan K. 2011. An analysis of the drivers affecting the implementation of green supply chain management. Resources. Conservation
+and Recycling 55: 659­667. DiMaggio PJ, Powell WW. 1983. The iron cage revisited: Institutional isomorphism and collective rationality in organizational fields. American
+Sociological Review 48: 147­160. Donaldson T, Preston LE. 1995. The Stakeholder Theory of the Corporation: Concepts, Evidence, and Implications. The Academy of Management
+Review 20: 65­91. Dong S, Burritt R. 2010. Cross-Sectional Benchmarking of Social and Environmental Reporting Practice in the Australian Oil and Gas Industry.
+Sustainable Development 18: 108­118. Engau C, Hoffmann VH. 2009. Effects of regulatory uncertainty on corporate strategy-an analysis of firms' responses to uncertainty about post-
+Kyoto policy. Environmental Science and Policy 12: 766­777. Etzion D. 2007. Research on Organizations and the Natural Environment, 1992-Present: A Review. Journal of Management 33: 637­664. Faucheux S, Nicolaï I. 2011. IT for green and green IT: A proposed typology of eco-innovation. Ecological Economics 70: 2020­2027. Faulkne David, Ysanne M. Carlisle, Howard P. Viney. 2005. Changing corporate attitudes towards environmental policy. Management of
+Environmental Quality. An International Journal 16(5): 476­489. Frondel M, Horbach J, Rennings K. 2008. What triggers environmental management and innovation? Empirical evidence for Germany.
+Ecological Economics 66: 153­160. George AL, McKeown TJ. 1985. Case studies and theories of organizational decision making. In: Advances in Information Processing in
+Organizations, Coulam RF, Smith RA (eds). JAI Press: Greenwich, CT. Helfat CE. 1997. Know-how and asset complementarity and dynamic capability accumulation: the case of R&D. Strategic Management Journal 18:
+339­360. Hoffman AJ, Bazerman MH. 2005. Changing environmental practice: understanding and overcoming the organizational and psychological
+barriers. Harvard Business School, Working Paper No.05-043. Hoffmann VH, Trautmann T, Schneider M. 2008. A taxonomy for regulatory uncertainty-application to the European Emission Trading Scheme.
+Environmental Science and Policy 11: 712­722. Khanna M, Anton WRQ. 2002. Corporate environmental management: regulatory and market-based incentives. Land Economics 78(4): 539­558. Kassinis G, Soteriou A. 2003. Greening the service-profit chain: the impact of environmental management practices. Production and Operations
+Management 12: 386­403. King A, Lenox M. 2002. Exploring the locus of profitable pollution reduction. Management Science 48: 289­299.
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+332
+
+T. Thurner and L. N. Proskuryakova
+
+Klassen RD, McLaughlin CP. 1996. The impact of environmental management on firm performance. Management Science 42: 1199­1214. Kleindorfer PR, Singhal K, Van Wassenhove LN. 2005. Sustainable operations management. Production and Operations Management 14: 482­492. Kolk A, Pinkse J. 2005. Business response to climate change: identifying emergent strategies. California Management Review 47: 6­20. Kolk A, Walhain S, Wateringen S. 2001. Environmental reporting by the Fortune Global 250: exploring the infl uence of nationality and sector.
+Business Strategy and the Environment 10: 15­28. Korhonen J, Seager T. 2008. Beyond eco-effi ciency: a resilience perspective. Business Strategy and the Environment 17: 411­419. KPMG. 2005. International Survey of Corporate Social Responsibility Reporting. Advisory KPMG Global Sustainability Services: Amsterdam. Krippendorff K. 1980. Content Analysis. An Introduction to its Methodology. The Sage Commtext Series, Sage Publications Ltd., London. Lazko E. 2011. Interviews with CEOs of oil & gas sector. Deloitte. Lee S-Y. 2012. Corporate Carbon Strategies in Responding to Climate Change. Business Strategy and the Environment 21: 33­48. Loiter JM, Norberg-Bohm V. 1999. Technology policy and renewable energy: Public roles in the development of new energy technologies. Energy
+Policy 27: 85­97. Loorbach D, van Bakel JC, Whiteman G and Rotmans J. 2010. Business Strategies for Transitions Towards Sustainable Systems. Business Strategy
+and the Environment 19: 133­146. Magrini A, dos Santos Lins L. 2007. Integration between environmental management and strategic planning in the oil and gas sector. Energy
+Policy 35: 4869­4878. Marcus AA, Anderson MH. 2006. A General Dynamic Capability: Does it Propagate Business and Social Competencies in the Retail Food
+Industry? Journal of Management Studies 43: 19­46. Masanet-Llodra MJ. 2006. Environmental Management Accounting: A Case Study Research on Innovative. Journal of Business Ethics 68: 393­408. Mathis A. 2007. Corporate social responsibility and policy making: what role does communication play? Business Strategy and the Environment 16: 366­385. Meyer JW, Rowan B. 1977. Institutional organizations: Formal structure as myth and ceremony. The American Journal of Sociology 80: 340­363. Noci G, Verganti R. 1999. Managing `green' product innovation in small firms. R&D Management 29: 3­15. North K. 1992. Environment Business Management: An Introduction. International Labour Organization: Ginebra. Pagell M, Wu Z. 2009. Building a more complete theory of sustainable supply chain management using case studies of 10 exemplars. Journal of
+Supply Chain Management 45: 37­56. Palmer K, Oates WE. 1995. Tightening environmental standards: the benefit- cost or the no-cost paradigm? Journal of Economic Perspectives 9:
+119­133. Peattie K, Crane A. 2005. Green marketing: legend, myth, farce or prophesy? Qualitative Market Research: An International Journal 8: 357­370. Reinhardt FL, 1998. Environmental product differentiation: implications for corporate strategy. California Management Review 40: 43­73. Rhee S, Lee S. 2003. Dynamic change of corporate environmental strategy: rhetoric and reality. Business Strategy and the Environment 12: 175­190. Russo MV, Fouts PA. 1997. A resource-based perspective on corporate environmental performance and profitability. Academy of Management
+Journal 40: 534­559. Sarkis J, Zhu Q, Lai K. 2011. An organizational theoretic review of green supply chain management literature. International Journal of Production
+Economics 130: 1­15. Scott WR. 1992. Organizations: Rational, Natural and Open Systems. Prentice Hall: Englewood Cliffs. Spence C. 2009. Social and environmental reporting and the corporate ego. Business Strategy and the Environment 18: 254­265. Svendsen AC, Laberge M. 2006. A new direction for CSR: engaging networks for whole systems change. In The Challenge of Organizing and
+Implementing Corporate Social Responsibility, Jonker J, De Witte M (eds). Palgrave MacMillan: Hampshire, New York. 248­261. Teece DJ. 2007. Explicating dynamic capabilities: the nature and microfoundations of (sustainable) enterprise performance. Strategic Management
+Journal 28: 1319­1350. doi: 10.1002/smj.640 Terlaak A. 2007. Order Without Law? The Role of Certified Management Standards in Shaping Socially Desired Firm Behaviors. The Academy of
+Management Review 32: 968­985. Trowbridge PA. 2001. Case study of green supply-chain management at advanced micro devices. Greener Management International 35: 121­35. Weber RP. 1988. Basic Content Analysis, Sage University Paper Series on Quantitative Applications in the Social Sciences, Series No 07-049,
+Beverley Hills and London, Sage Publications Inc. Weinhofer G, Hoffmann VH. 2010. Mitigating climate change ­ how do corporate strategies differ?. Business Strategy and the Environment
+19: 77­89. Yalabik B, Fairchild RJ. 2011. Customer, regulatory, and competitive pressure as drivers of environmental innovation. International Journal of
+Production Economics 131: 519­527. Yin RK. 1994. Case Study Research:Design and Methods. 2ded. Thousand Oaks, CA: Sage. Zietsma C, Winn MI. 2007. Building chains and directing fl ows: strategies and tactics of mutual infl uence in stakeholder conflicts. Business and
+Society 47: 68­101.
+
+Copyright © 2013 John Wiley & Sons, Ltd and ERP Environment
+
+Bus. Strat. Env. 23, 318­332 (2014) DOI: 10.1002/bse
+
+
