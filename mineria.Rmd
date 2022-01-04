@@ -1,0 +1,65 @@
+---
+title: "Mineria de texto"
+output: 
+  html_document:
+    theme: flatly
+    toc: TRUE
+    toc_float: TRUE
+site: distill::distill_website
+---
+
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/wf_mineria.png" alt="wf1" title="wf1" width="640" height="225" />
+
+# Análisis de sentimientos al contenido de artículos científicos
+
+Este es un ejemplo de cómo aplicar el análisis de sentimientos a artículos científicos. El análisis de sentimiento se aplica a nivel de la oración. Asigna valores a las oraciones positivas y negativas y evalúa la magnitud del sentimiento en referencia con una base de palabras.
+
+```{r, echo=F, warning=F, message=F, eval=T, results='hide'}
+library(sentimentr)
+library(dplyr)
+library(readtext)
+library(ggplot2)
+
+setwd("C:/Users/User/Google Drive/Web_pages/bibliometriar")
+folder <- "C:/Users/User/Google Drive/Web_pages/bibliometriar"
+```
+
+## 1. Cargar los textos
+Como ejemplo se utilizarán dos artículos científicos.
+
+```{r, echo=T, warning=F, message=F, eval=T}
+e1 <- readtext(paste0(folder, "/*.txt"),
+                    docvarsfrom = "filenames", dvsep = "_")
+e2 <- as.data.frame(e1)
+```
+
+## 2. Obtener las oraciones y crear el gráfico agregado de sentimientos
+Una vez se asigna un valor a cada oración dentro de los artículos, se puede visualizar mediante un *boxplot* donde cada punto representa una oración y la calificación de su sentimiento. Puntaje mayor a 0 representa sentimientos positivos y menor a 0 sentimientos negativos.
+
+```{r, echo=T, warning=F, message=F, eval=T}
+e3 <- get_sentences(e2)
+colnames(e3)[4] <- "name"
+e4 <- e3 %>% sentiment_by(by = c("name"))
+plot(e4)
+```
+
+## 3. Texto de sentimientos
+Otra manera de visualizar los resultados es resaltar dentro del texto los sentimiento positivos y negativos.
+
+```{r, echo=F, warning=F, message=F, eval=T, results='hide'}
+e5 <- e3 %>% sentiment_by(by = c("text", "name"))
+
+e5 %>% filter(name=="Smink") %>%
+  mutate(review = get_sentences(text)) %$%
+  sentiment_by(review, name) %>%
+  highlight(open = T)
+```
+
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/sent_art_example.png" alt="texto_sent" title="Ejemplo_text_sentimientos" width="640" height="425" />
+
+## 4. Histograma
+
+```{r, echo=T, warning=F, message=F, eval=T}
+ggplot(e5, aes(ave_sentiment)) + geom_histogram()
+```
+

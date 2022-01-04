@@ -1,0 +1,88 @@
+---
+title: "Bibliometría en R para el mapeo de la ciencia y la revisión de literatura."
+author: "Por: Guillermo Orjuela Ramirez."
+output:
+  html_document:
+    theme: flatly
+    toc: TRUE
+    toc_float: TRUE
+site: distill::distill_website
+---
+
+Esta página web compila la información básica del curso **Bibliometría en R para el mapeo de la ciencia y la revisión de literatura.** Con esta página se pretende complementar la información conceptual de los contenidos presenciales. El **objetivo principal** del curso es *aplicar las herramientas bibliométricas a la producción científica para el mapeo de la ciencia y para la revisión de literatura*. El análisis de las bases de datos de documentos se hará usando el lenguaje de programación R y el software RStudio como herramientas para la manipulación y visualización de los datos.
+
+Todo el curso se desarrolla en R a través del contenido práctico de ejercicios, esto permite a los asistentes aprender sobre el uso de técnicas bibliométricas mientras se diseñan y aplican los códigos en R y fomenta la discusión de la interpretación de los resultados.
+
+El curso cubre los temas de preparación, búsqueda y obtención de información científica; selección de las bases de datos; y visualización e interpretación de los documentos. Estos temas se desarrollan en las cuatro partes del curso y buscan cumplir con los siguientes objetivos de aprendizaje.
+
+## Objetivos
+* Definir y precisar expresiones de búsqueda.
+* Procesar e interpretar bases en datos de la actividad científica a partir de técnicas bibliométricas.
+* Visualizar la información bibliométrica y conocer sus beneficios y limitantes.
+
+## Motivación: R para el mapeo de la ciencia
+El número de publicaciones académicas se incrementa con el paso de los años. Así mismo, surgen nuevas revistas que abordan diversos temas de investigación. Por lo cual, el creciente ritmo de producción de conocimiento hace que estar al día con los hallazgos y evidencias sea una tarea que requiere cada vez más tiempo (Aria & Cuccurullo, 2017). De allí que, la bibliometría, como una técnica para la medición de la actividad científica, resulta bastante útil para analizar grandes volúmenes de información.
+
+Para llevar a cabo un análisis bibliométrico, un investigador puede hacer uso de diversos software, sin embargo, para usarlos, el investigador debe familiarizarse con cada entorno, lo cual muchas veces es una barrera de entrada, ya que requiere tiempo y aprendizaje. Además, la mayoría de los software se especializan en análisis específicos, por lo que se requiere de varios de ellos para un resultado más completo.
+
+No obstante, en [R](https://www.r-project.org/) se han desarrollado paquetes que proporcionan un análisis bibliométrico más completo y sus resultados permiten complementar la actividad investigativa, lo cual facilita su uso.
+
+## Audiencia
+El curso de **Bibliometría en R para el mapeo de la ciencia y las revisiones de literatura.** está dirigido tanto a quienes deseen aprender a visualizar e interpretar bases de datos de artículos científicos de manera ágil y dinámica, como a quienes necesiten complementar el proceso de revisión de literatura al aplicar herramientas bibliométricas como valor agregado a su actividad académica. 
+
+Los contenidos de este curso no requieren en los asistentes un conocimiento especializado en R, ya que se comenzará con las ideas básicas del lenguaje de programación. Este curso está especialmente dirigido a personas con conocimiento básico en bases de datos científicas (Scopus o WoS).
+
+## Cotenido
+El contenido sigue un flujo de trabajo el cual consiste en la búsqueda de información, el análisis descriptivo de las unidades de análisis, el análisis y visualización de los datos y la interpretación de los resultados (Zupic & Čater, 2015).
+
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/wf_index.png" alt="wf1" title="wf1" width="640" height="225" />
+
+### Parte 1: búsqueda de información
+* Bibliometría en la actividad científica.
+* Definición del diseño de investigación.
+* Bases de datos en ciencias sociales: ¿Cuál (o cuáles) debo usar?
+* Diseño de la expresión de búsqueda.
+* Obtención de la base de datos de documentos (artículos, libros).
+* Selección de los documentos.
+* Ejercicio: análisis bibliométrico.
+
+### Parte 2: Descripción de las unidades de análisis
+* Análisis descriptivo de la base de documentos.
+  +   Reconocimiento de la base de datos.
+  +   Información agregada (revistas, autores, documentos).
+  +   Producción científica anual.
+* Métricas de revistas.
+  +   Relevancia (citaciones, ley de Bradford).
+  +   Producción anual.
+* Métricas de autores
+  +   Relevancia.
+  +   Producción en el tiempo.
+  +   Afiliaciones.
+* Métricas de documentos.
+  +   GCS y LCS.
+
+### Parte 3: análisis y visualización de las estructuras intelectuales
+* Estructura social.
+  +   Red de colaboración entre autores.
+  +   Red de colaboración entre universidades.
+* Estructura conceptual.
+  +   Red de co-ocurrencia de palabras clave.
+  +   Red de co-ocurrencia en abstracts.
+* Estructura intelectual.
+  +   Red de co-citación de autores.
+  +   Red de co-citación de revistas.
+  +   Mapa historiográfico.
+
+### Parte 4: análisis de texto
+* Análisis de sentimientos.
+* Minería de texto.
+* Limpieza y edición de la base de datos.
+
+## Metodología
+En las cuatro partes del curso se utilizan casos aplicados y durante la explicación del contenido se van aplicando los conceptos y técnicas bibliométricas. Además, si irá construyendo el código en R para explorar los resultados de las bases de datos.
+
+## Requisitos
+Previo a iniciar cada parte del curso, los asistentes deben tener instalados R y RStudio, así como los paquetes De la pestaña de **Recursos**.
+  * [R](https://www.r-project.org/) V3.6.3 (2020-02-29).
+  * [RStudio](https://rstudio.com/).
+  * Paquetes instalados sección de Recursos.

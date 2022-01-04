@@ -1,0 +1,156 @@
+---
+title: "Descripción de las unidades de análisis"
+output: 
+  html_document:
+    theme: flatly
+    toc: TRUE
+    toc_float: TRUE
+site: distill::distill_website
+---
+
+<img src="C:/Users/User/Google Drive/Web_pages/bibliometriar/wf_descripcion.png" alt="wf1" title="wf1" width="640" height="225" />
+
+## Unidades de análisis
+Las unidades de análisis representan el conjunto de elementos de donde se extrae la información y los cuales podemos utilizar para aplicar las técnicas bibliométricas. Las principales unidades de análisis son los documentos, autores, revistas, instituciones. Dentro de un documento, las unidades de análisis pueden ser el título, el resumen, las palabras clave y el texto. Seguidamente se aplicará el análisis descriptivo a las principales unidades de análisis.
+
+## 1. Cargue de paquetes y de la base de datos.{#d1}
+Los siguientes paquetes se usarán para trabajar con la base de datos para el análisis bibliométrico. En la parte de **Recursos** se indica cómo se pueden instalar. A partir de aquí se deben cargar en la consola de R para su uso.
+
+```{r, echo=T, warning=F, message=F, eval=T}
+library(bibliometrix)
+library(dplyr)
+library(ggplot2)
+library(kableExtra)
+```
+
+Para cargar la base de datos se comienza por usar la función *setwd* que permite definir la carpeta donde se encuentre la base de datos y donde guardaremos los resultados del análisis. Luego, la función *convert2df* permite transformar el archivo a formato bibliometrix
+
+```{r, echo=T, warning=F, message=F, results='hide'}
+# Definir el directorio de trabajo
+setwd("C:/Users/User/Google Drive/Web_pages/example_ecoinnov_290620")
+
+# Base de datos
+df <- convert2df("ecoinnov_290620.bib", dbsource="scopus", format="bibtex")
+```
+
+## 2. Análisis descriptivo agregado.{#d2}
+### 2.1. Dimensión y nombre de las variables
+Cuando se trabaja con una base de datos, lo primero que se debe hacer es conocer su dimensión y las variables de la base. La dimensión corresponde a la cantidad de artículos (filas u observaciones) y variables (columnas) de la base de datos de los documentos. La base de datos contiene 1.640 artículos y 31 variables.
+
+Las variables son nombradas según la codificación de *Scopus* o *Web of Knowledge* 
+
+```{r, echo=T, warning=F, message=F, eval=T}
+# Dimensiones de la base de datos
+dim(df)
+# Nombre de las variables
+names(df)
+```
+
+### 2.2. Descripción agregada de la base de datos
+Luego se obtiene la información descriptiva agregada de la base de datos. Para ello se aplica la función *biblioAnalysis* a la base *df*. Se recomienda verificar si la información está separada por coma (*,*) o por punto y coma (*;*). Esta función da un objeto de clase *bibliometrix*.
+
+```{r, echo=T, warning=F, message=F, eval=T}
+da <- biblioAnalysis(df, sep = ";")
+```
+
+El objeto *da* tiene información general como: número de artículos, número de autores y su producción, artículos más citados, las organizaciones y países de afiliación de los autores al momento de publicar el artículo, el total de citas por año, el número de artículos publicados por revista.
+
+Para obtener un resumen de la base de datos se aplica la función *summary*
+
+```{r, echo=T, warning=F, message=F, results='hide'}
+s <- summary(da, pause = F)
+```
+
+```{r, echo=T, warning=F, message=F, eval=T}
+s1 <- as.data.frame(s$MainInformationDF)
+```
+```{r, echo=F, warning=F, message=F, eval=T}
+s1 %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
+
+### 2.3. Producción científica anual
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=10, fig.height=5}
+acp <- as.data.frame(s$AnnualProduction)
+colnames(acp)[1] <- "year"
+ggplot(acp, aes(year,  Articles, group=1)) + geom_point(stat='summary', fun=sum) + stat_summary(fun=sum, geom="line")
+```
+
+## 3. Análisis de revistas{#d3}
+
+### 3.1. Revistas más relevantes
+La relevancia corresponde a la cantidad de citaciones que posee la unidad de análisis. Así, la citación es una medida de influencia, por lo que un artículo, autor o revista es relevante en un área de conocimiento si es altamente citado. Lo anterior se basa en el supuesto que los autores citan los documentos que consideran importantes.
+
+```{r, echo=T, warning=F, message=F, eval=T}
+rs <- as.data.frame(s$MostRelSources)
+rs %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
+
+### 3.2. Ley de Bradford
+
+```{r, echo=T, warning=F, message=F, eval=T}
+bl <- bradford(df)
+blt <- bl$table
+blt <- blt %>% mutate(pfreq = prop.table(Freq)) %>% mutate(cum_freq = cumsum(pfreq))
+blt <- blt %>% select(SO, Rank, Freq, Zone, pfreq, cum_freq)
+blt %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left") %>%   scroll_box(width = "100%", height = "200px")
+```
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=9, fig.height=7}
+plot(bl$graph)
+```
+
+### 3.3. Crecimiento anual de las revistas
+
+```{r, echo=T, warning=F, message=F, eval=T, fig.width=8, fig.height=5}
+sg <- sourceGrowth(df, top = 5, cdf = F)
+sg <- sg %>% tidyr::gather(var, val, 2:6)
+ggplot(sg, aes(Year,  val, group=var, color=var, shape=var)) + geom_point() + geom_line() + theme(legend.position = "bottom", legend.key = element_blank(), legend.key.size=unit(1,"point"), legend.title = element_text("Artíulos")) +  guides(colour=guide_legend(nrow=5)) + ylab("Número de artículos") + xlab("Año")
+```
+
+## 4. Análisis de autores{#d4}
+
+### 4.1. Autores más relevantes
+
+```{r, echo=T, warning=F, message=F, eval=T}
+ra <- as.data.frame(s$MostProdAuthors)
+head(ra) %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
+
+### 4.2. Producción de los autores en el tiempo
+
+```{r, echo=T, warning=F, message=F, eval=T}
+ap <- authorProdOverTime(df)
+```
+
+## 5. Análisis de Artículos{#d5}
+
+### 5.1. Artículos citados globalmente (GCS)
+
+```{r, echo=T, warning=F, message=F, eval=T}
+ac <- as.data.frame(da$MostCitedPapers)
+head(ac) %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
+
+### 5.2.Artículos más citados localmente (LCS)
+
+```{r, echo=T, warning=F, message=F, eval=T}
+lc <- localCitations(df, fast.search = F, sep = ";")
+pc <- as.data.frame(lc$Papers)
+head(pc) %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
+
+Diagrama de dispersión entre el LCS y el GCS. Esto permite analizar si el área de investigación comparte artículos fuera de esta área o es excluyente.
+
+```{r, echo=T, warning=F, message=F, eval=T}
+ggplot(pc, aes(GCS, LCS, color=Year)) + geom_point() + scale_x_continuous(trans = "log2") + scale_y_continuous(trans = "log2") +  scale_color_continuous(type = "viridis")
+```
+
+### 6. Afiliaciones y países
+
+```{r, echo=T, warning=F, message=F, eval=T}
+afp <- as.data.frame(da$FirstAffiliation)
+colnames(afp)[1] <- "fp"
+afp <- afp %>% count(fp) %>% group_by(fp)
+head(afp) %>% kable() %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
